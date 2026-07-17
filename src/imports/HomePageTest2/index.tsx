@@ -280,7 +280,7 @@ function EventMeta({ date, coming }: { date: string; coming: string }) {
 
 function EventsSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
-    <section className="bg-[#f8f7f5] w-full py-6 lg:py-0 z-[1]">
+    <section className="bg-[#f8f7f5] w-full pt-12 pb-6 lg:pt-[72px] lg:pb-0 z-[1]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-4 lg:mb-2">
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45]">
