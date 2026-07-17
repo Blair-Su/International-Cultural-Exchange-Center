@@ -381,7 +381,7 @@ function GetInvolvedSection({ onNavigate }: { onNavigate: (page: Page) => void }
                 <HeartIcon />
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">Volunteer</span>
               </button>
-              <button className="bg-[#fef2e5] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer">
+              <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer">
                 <GiftIcon />
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[18px] whitespace-nowrap">Donate</span>
               </button>
