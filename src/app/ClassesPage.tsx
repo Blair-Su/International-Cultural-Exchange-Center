@@ -1,6 +1,6 @@
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import heroImg     from "@/imports/HomePageTest2/ceb876732bfd8fcca9b7b275f4d75dc7b9bbfba9.png";
+import heroImg     from "@/imports/Program.png";
 import danceImg    from "@/imports/Dance.JPEG";
 import songsImg    from "@/imports/Music.PNG";
 import hanfuImg    from "@/imports/HomePageTest2/840beff7b23fbd7ada94e7e21afb82c1c2895632.png";
