@@ -4,7 +4,7 @@ import { ICECHeader } from "./components/ICECHeader";
 import imgLogoNobg from "@/imports/Frame_427319345.png";
 import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
 import xiaohongshuLogo from "@/imports/Xiaohongshu-___-Logo.png";
-import wechatLogo from "@/imports/WeChat_Logo-1.png";
+import wechatLogo from "@/imports/wechat-logo-vectorized.svg";
 
 interface Props { onNavigate: (page: Page) => void; }
 
@@ -219,7 +219,7 @@ export default function ContactPage({ onNavigate }: Props) {
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-[36px] h-[36px] rounded-full bg-[#f5f4f2] flex items-center justify-center shrink-0 mt-[1px]">
-                        <img src={wechatLogo} alt="WeChat" className="w-[22px] h-[22px] object-contain rounded-[4px]" />
+                        <img src={wechatLogo} alt="WeChat" className="w-[24px] h-[22px] object-contain" />
                       </div>
                       <div className="flex flex-col gap-[6px]">
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[11px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.6px]">WeChat</p>
