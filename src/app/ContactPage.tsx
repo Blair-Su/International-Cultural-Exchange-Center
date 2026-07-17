@@ -67,9 +67,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
             <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
-              <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
+              <a href={imgWeChatQr} target="_blank" rel="noopener noreferrer" className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0 block">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
-              </div>
+              </a>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.68)] leading-[1.4]">Follow us on WeChat!</p>
             </div>
           </div>
@@ -225,8 +225,10 @@ export default function ContactPage({ onNavigate }: Props) {
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[11px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.6px]">WeChat</p>
                         <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-black hover:opacity-75 transition-opacity no-underline">NY国潮君</a>
                         <div className="flex items-center gap-3 mt-1">
-                          <img src={imgWeChatQr} alt="WeChat QR code" className="w-[72px] h-[72px] rounded-[6px] object-cover shrink-0" />
-                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[12px] text-[rgba(0,0,0,0.5)] leading-[1.4]">Scan to follow us on WeChat</p>
+                          <a href={imgWeChatQr} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
+                            <img src={imgWeChatQr} alt="WeChat QR code" className="w-[72px] h-[72px] rounded-[6px] object-cover" />
+                          </a>
+                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.5)] leading-[1.4]">Scan to follow us on WeChat</p>
                         </div>
                       </div>
                     </div>
