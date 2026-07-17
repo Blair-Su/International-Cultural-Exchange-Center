@@ -201,7 +201,7 @@ function WhatWeDoSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
       title: "Donation",
       desc: "Help preserve cultural heritage and create more opportunities for communities to learn, connect, and celebrate together.",
       linkColor: "#f09345",
-      onClick: undefined,
+      onClick: () => onNavigate("donate"),
     },
   ];
 

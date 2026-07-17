@@ -320,7 +320,7 @@ function NextChapterSection({ onNavigate }: { onNavigate: (page: Page) => void }
             </button>
 
             {/* Donate — orange filled */}
-            <button className="bg-[#fef2e5] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
+            <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M20 12V22H4V12" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M22 7H2V12H22V7Z" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
