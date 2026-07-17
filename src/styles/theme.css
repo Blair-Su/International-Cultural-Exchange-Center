@@ -189,8 +189,8 @@
   a[class*="bg-[#e5f4fb]"],
   div[class*="cursor-pointer"][class*="bg-[#e5f4fb]"],
   button[class*="border-[#1eb8e7]"] {
-    background-color: #3bafd0 !important;
-    border-color: #3bafd0 !important;
+    background-color: #3DB0D3 !important;
+    border-color: #3DB0D3 !important;
     color: #ffffff !important;
   }
 
