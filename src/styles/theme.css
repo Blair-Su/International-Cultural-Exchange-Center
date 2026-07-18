@@ -177,42 +177,42 @@
 
 @layer utilities {
   button[class*="bg-[#fef2e5]"],
-  button[class*="bg-[#f09345]"],
-  a[class*="bg-[#f09345]"],
+  button[class*="bg-[#E48D62]"],
+  a[class*="bg-[#E48D62]"],
   div[class*="cursor-pointer"][class*="bg-[#fef2e5]"] {
-    background-color: #e98b61 !important;
-    border-color: #e98b61 !important;
+    background-color: #E48D62 !important;
+    border-color: #E48D62 !important;
     color: #ffffff !important;
   }
 
   button[class*="bg-[#e5f4fb]"],
   a[class*="bg-[#e5f4fb]"],
   div[class*="cursor-pointer"][class*="bg-[#e5f4fb]"],
-  button[class*="border-[#1eb8e7]"] {
+  button[class*="border-[#3DB0D3]"] {
     background-color: #3DB0D3 !important;
     border-color: #3DB0D3 !important;
     color: #ffffff !important;
   }
 
   button[class*="bg-[#fef2e5]"]:hover,
-  button[class*="bg-[#f09345]"]:hover,
-  a[class*="bg-[#f09345]"]:hover,
+  button[class*="bg-[#E48D62]"]:hover,
+  a[class*="bg-[#E48D62]"]:hover,
   div[class*="cursor-pointer"][class*="bg-[#fef2e5]"]:hover {
-    background-color: #dc7f55 !important;
+    background-color: #D87B52 !important;
   }
 
   button[class*="bg-[#e5f4fb]"]:hover,
   a[class*="bg-[#e5f4fb]"]:hover,
   div[class*="cursor-pointer"][class*="bg-[#e5f4fb]"]:hover,
-  button[class*="border-[#1eb8e7]"]:hover {
-    background-color: #329fbd !important;
+  button[class*="border-[#3DB0D3]"]:hover {
+    background-color: #329FBD !important;
   }
 
   button[class*="bg-[#fef2e5]"] *,
-  button[class*="bg-[#f09345]"] *,
+  button[class*="bg-[#E48D62]"] *,
   button[class*="bg-[#e5f4fb]"] *,
-  button[class*="border-[#1eb8e7]"] *,
-  a[class*="bg-[#f09345]"] *,
+  button[class*="border-[#3DB0D3]"] *,
+  a[class*="bg-[#E48D62]"] *,
   a[class*="bg-[#e5f4fb]"] *,
   div[class*="cursor-pointer"][class*="bg-[#fef2e5]"] *,
   div[class*="cursor-pointer"][class*="bg-[#e5f4fb]"] * {
@@ -220,10 +220,10 @@
   }
 
   button[class*="bg-[#fef2e5]"] svg path,
-  button[class*="bg-[#f09345]"] svg path,
+  button[class*="bg-[#E48D62]"] svg path,
   button[class*="bg-[#e5f4fb]"] svg path,
-  button[class*="border-[#1eb8e7]"] svg path,
-  a[class*="bg-[#f09345]"] svg path,
+  button[class*="border-[#3DB0D3]"] svg path,
+  a[class*="bg-[#E48D62]"] svg path,
   a[class*="bg-[#e5f4fb]"] svg path {
     stroke: #ffffff !important;
   }

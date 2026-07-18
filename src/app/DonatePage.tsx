@@ -65,7 +65,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
                   else if (l === "Donate") onNavigate("donate");
                   else if (l === "Contact") onNavigate("contact");
                 }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors"
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors"
               >
                 {l}
               </p>
@@ -73,9 +73,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           </div>
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -86,15 +86,15 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
-              <a key={name} href={url} target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#1eb8e7] transition-colors no-underline">{name}</a>
+              <a key={name} href={url} target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">{name}</a>
             ))}
           </div>
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Stay Connected</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.55)] leading-[1.5]">Subscribe for updates on events and programs.</p>
             <div className="flex flex-col gap-2 mt-1">
-              <input type="email" placeholder="Email address" className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors" />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+              <input type="email" placeholder="Email address" className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors" />
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>
@@ -114,7 +114,7 @@ export default function DonatePage({ onNavigate }: Props) {
   const [emailError, setEmailError] = useState("");
   const [paymentError, setPaymentError] = useState("");
 
-  const inputCls = "font-['Inter:Regular',sans-serif] font-normal text-[14px] text-black placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.15)] rounded-[6px] px-4 h-[46px] w-full outline-none focus:border-[#f09345] transition-colors";
+  const inputCls = "font-['Inter:Regular',sans-serif] font-normal text-[14px] text-black placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.15)] rounded-[6px] px-4 h-[46px] w-full outline-none focus:border-[#E48D62] transition-colors";
   const selectCls = `${inputCls} appearance-none`;
   const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   const validateEmailOnBlur = () => {
@@ -164,7 +164,7 @@ export default function DonatePage({ onNavigate }: Props) {
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[88px] items-start">
               <div className="pt-2">
-                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#f09345] tracking-[-0.32px] leading-[1.45] mb-2">
+                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">
                   Support ICEC
                 </p>
                 <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">
@@ -178,7 +178,7 @@ export default function DonatePage({ onNavigate }: Props) {
               <div className="flex flex-col gap-5">
                 <form className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-5">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-[#e98b61] font-['Inter:Semi_Bold',sans-serif] font-semibold text-[12px] text-white">
+                    <span className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-[#E48D62] font-['Inter:Semi_Bold',sans-serif] font-semibold text-[12px] text-white">
                       1
                     </span>
                     <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-black tracking-[-0.36px]">
@@ -280,7 +280,7 @@ export default function DonatePage({ onNavigate }: Props) {
 
                 <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-[#e98b61] font-['Inter:Semi_Bold',sans-serif] font-semibold text-[12px] text-white">
+                    <span className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-[#E48D62] font-['Inter:Semi_Bold',sans-serif] font-semibold text-[12px] text-white">
                       2
                     </span>
                     <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-black tracking-[-0.36px]">
@@ -296,7 +296,7 @@ export default function DonatePage({ onNavigate }: Props) {
                         onClick={() => setForm({ ...form, paymentMethod: method.name })}
                         className={[
                           "inline-flex items-center justify-center gap-2.5 h-[44px] px-4 rounded-[4px] border transition-colors cursor-pointer",
-                          form.paymentMethod === method.name ? "border-[#e98b61] bg-white shadow-[0px_2px_8px_0px_rgba(233,139,97,0.18)]" : "border-[rgba(0,0,0,0.14)] bg-white hover:bg-[#f8f7f5]",
+                          form.paymentMethod === method.name ? "border-[#E48D62] bg-white shadow-[0px_2px_8px_0px_rgba(233,139,97,0.18)]" : "border-[rgba(0,0,0,0.14)] bg-white hover:bg-[#f8f7f5]",
                         ].join(" ")}
                       >
                         <span className={`inline-flex items-center justify-center w-[32px] h-[32px] rounded-[6px] overflow-hidden shrink-0 ${PAYMENT_INFO_ICONS[method.name].frameClass}`}>

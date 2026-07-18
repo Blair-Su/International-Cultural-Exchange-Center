@@ -20,7 +20,7 @@ function AboutUsSection() {
       <img src={mainImg} alt="ICEC community gathering" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#f09345] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
+        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
           About Us
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
@@ -41,7 +41,7 @@ function IntroductionSection() {
           {/* Text */}
           <div className="flex flex-col gap-8 w-full lg:w-[480px] lg:shrink-0 lg:pt-16">
             <div>
-              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
                 Introduction
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.48px] leading-[1.25] mt-1">
@@ -90,7 +90,7 @@ function OurMissionSection() {
 
         {/* Centered heading */}
         <div className="text-center mb-10 lg:mb-[72px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Our Mission
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45] mt-1">
@@ -113,7 +113,7 @@ function OurMissionSection() {
 
             {/* Pull quote */}
             <div className="flex items-center gap-4">
-              <div className="w-[32px] h-[2px] bg-[#f09345] shrink-0" />
+              <div className="w-[32px] h-[2px] bg-[#E48D62] shrink-0" />
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.45)] italic leading-[1.5]">
                 "Exchange transforms strangers into neighbors."
               </p>
@@ -125,7 +125,7 @@ function OurMissionSection() {
           {/* Image with floating badge */}
           <div className="relative w-full lg:flex-1 h-[260px] sm:h-[360px] lg:h-[460px] rounded-[16px] overflow-hidden">
             <img src={image_About_us_3_1} alt="ICEC mission" className="w-full h-full object-cover" />
-            <div className="absolute bottom-5 left-5 bg-[#f09345] rounded-[12px] px-5 py-4 shadow-lg">
+            <div className="absolute bottom-5 left-5 bg-[#E48D62] rounded-[12px] px-5 py-4 shadow-lg">
               <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] text-white leading-none">15+</p>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-white/85 mt-1">Years bridging cultures worldwide</p>
             </div>
@@ -146,8 +146,8 @@ const STATS = [
 ];
 
 const BARS = [
-  { label: "Participants from diverse backgrounds", pct: 90, color: "#f09345" },
-  { label: "Would recommend ICEC events to others",   pct: 95, color: "#1eb8e7" },
+  { label: "Participants from diverse backgrounds", pct: 90, color: "#E48D62" },
+  { label: "Would recommend ICEC events to others",   pct: 95, color: "#3DB0D3" },
   { label: "Returning participants and partners",   pct: 70, color: "#c08848" },
 ];
 
@@ -157,7 +157,7 @@ function OurImpactSection() {
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
 
         <div className="text-center mb-10 lg:mb-[64px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Our Impact
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45] mt-1">
@@ -169,7 +169,7 @@ function OurImpactSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-[48px] mb-12 lg:mb-[64px]">
           {STATS.map((s) => (
             <div key={s.label} className="flex flex-col items-center gap-2 text-center">
-              <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[44px] sm:text-[56px] lg:text-[64px] text-[#f09345] tracking-[-1.28px] leading-none">
+              <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[44px] sm:text-[56px] lg:text-[64px] text-[#E48D62] tracking-[-1.28px] leading-none">
                 {s.number}{s.suffix}
               </p>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[12px] sm:text-[13px] text-[rgba(0,0,0,0.5)] uppercase tracking-[0.08em] leading-[1.4]">
@@ -216,12 +216,12 @@ function NextChapterSection({ onNavigate }: { onNavigate: (page: Page) => void }
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] top-0 left-0 -translate-x-1/4 -translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:left-0 sm:-translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#f09345" }} />
+            style={{ background: "#E48D62" }} />
           {/* Teal glow — mobile: bottom-right, desktop: right-center */}
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] bottom-0 right-0 translate-x-1/4 translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:right-0 sm:translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#1eb8e7" }} />
+            style={{ background: "#3DB0D3" }} />
 
           {/* Left concentric rings — desktop: center-left, mobile: top-left */}
           <svg className="absolute pointer-events-none hidden sm:block" aria-hidden
@@ -301,34 +301,34 @@ function NextChapterSection({ onNavigate }: { onNavigate: (page: Page) => void }
 
           <div className="relative z-10 flex flex-wrap gap-[15px] items-center justify-center">
             {/* Explore Upcoming Events — teal outline */}
-            <button onClick={() => onNavigate("events")} className="flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] border-2 border-[#1eb8e7] cursor-pointer hover:bg-[#e5f4fb] transition-colors shrink-0">
+            <button onClick={() => onNavigate("events")} className="flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] border-2 border-[#3DB0D3] cursor-pointer hover:bg-[#e5f4fb] transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#1EB8E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M16 2V6" stroke="#1EB8E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M8 2V6" stroke="#1EB8E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3 10H21" stroke="#1EB8E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M16 2V6" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 2V6" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 10H21" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Explore Upcoming Events</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Explore Upcoming Events</span>
             </button>
 
             {/* Partner With Us — teal filled */}
             <button onClick={() => onNavigate("contact")} className="bg-[#e5f4fb] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50903 2.99871 7.05 2.99871C5.59097 2.99871 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72719 21.351 5.12076 20.84 4.61Z" stroke="#1EB8E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50903 2.99871 7.05 2.99871C5.59097 2.99871 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72719 21.351 5.12076 20.84 4.61Z" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Partner With Us</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Partner With Us</span>
             </button>
 
             {/* Donate — orange filled */}
             <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20 12V22H4V12" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M22 7H2V12H22V7Z" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 22V7" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#F09345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 12V22H4V12" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 7H2V12H22V7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 22V7" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Donate</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Donate</span>
             </button>
           </div>
         </div>
@@ -364,7 +364,7 @@ function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
               <p
                 key={l}
                 onClick={() => { if (l === "About") onNavigate("about"); else if (l === "Events") onNavigate("events"); else if (l === "Classes") onNavigate("classes"); else if (l === "Art Foundation") onNavigate("artfoundation"); else if (l === "Volunteer") onNavigate("volunteer"); else if (l === "Donate") onNavigate("donate"); else if (l === "Contact") onNavigate("contact"); }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors"
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors"
               >
                 {l}
               </p>
@@ -374,9 +374,9 @@ function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
           {/* Contact */}
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -389,7 +389,7 @@ function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {["TikTok", "Instagram", "Facebook", "Youtube", "RedNote"].map((l) => (
-              <p key={l} className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#1eb8e7] transition-colors">
+              <p key={l} className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#3DB0D3] transition-colors">
                 {l}
               </p>
             ))}
@@ -405,9 +405,9 @@ function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
               <input
                 type="email"
                 placeholder="Email address"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors"
+                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors"
               />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>

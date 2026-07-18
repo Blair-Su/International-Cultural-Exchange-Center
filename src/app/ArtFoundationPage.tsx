@@ -16,7 +16,7 @@ function HeroSection() {
       <img src={heroImg} alt="ICEC Art Foundation" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#f09345] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
+        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
           Programs
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[60px] text-white tracking-[-1.28px] leading-[1.15] max-w-[700px]">
@@ -33,7 +33,7 @@ function MissionSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="max-w-[760px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Mission
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 mb-6 lg:mb-8">
@@ -60,7 +60,7 @@ const AWARD_CATEGORIES = [
       </svg>
     ),
     category: "Music",
-    color: "#f09345",
+    color: "#E48D62",
     items: ["Traditional-style song creation", "Traditional-style Instrument Performance"],
   },
   {
@@ -72,13 +72,13 @@ const AWARD_CATEGORIES = [
       </svg>
     ),
     category: "Visual Arts",
-    color: "#1eb8e7",
+    color: "#3DB0D3",
     items: ["Traditional Painting", "Photography", "Sculpture"],
   },
   {
     icon: <div className="size-7"><DanceIcon /></div>,
     category: "Dance",
-    color: "#f09345",
+    color: "#E48D62",
     items: ["Traditional Dance Performance", "Creative Choreography"],
   },
   {
@@ -90,7 +90,7 @@ const AWARD_CATEGORIES = [
       </svg>
     ),
     category: "Literature",
-    color: "#1eb8e7",
+    color: "#3DB0D3",
     items: ["Poetry Creation", "Prose", "Novels", "Drama Scripts"],
   },
 ];
@@ -100,7 +100,7 @@ function AwardCategoriesSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[56px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Award Categories
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 max-w-[680px] mx-auto">
@@ -146,7 +146,7 @@ function AwardGroupSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="mb-10 lg:mb-[56px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Award Group
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 max-w-[560px]">
@@ -165,7 +165,7 @@ function AwardGroupSection() {
             </div>
             <div className="p-6 lg:p-7 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#fef2e5] text-[#f09345]">Under 18</span>
+                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#fef2e5] text-[#E48D62]">Under 18</span>
                 <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">Junior</h3>
               </div>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6]">
@@ -181,7 +181,7 @@ function AwardGroupSection() {
             </div>
             <div className="p-6 lg:p-7 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#e5f4fb] text-[#1eb8e7]">18 & above</span>
+                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#e5f4fb] text-[#3DB0D3]">18 & above</span>
                 <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">Youth</h3>
               </div>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6]">
@@ -200,7 +200,7 @@ function SupportSection() {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-        <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+        <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
           How the Foundation Supports Artists
         </h5>
         <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 mb-10 lg:mb-[56px]">
@@ -216,8 +216,8 @@ function SupportSection() {
               label: "Artist Awards and Prizes",
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 4h8v3.5a4 4 0 0 1-8 0V4Z" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 6H5.5A2.5 2.5 0 0 0 8 8.5M16 6h2.5A2.5 2.5 0 0 1 16 8.5M12 12v4M9 20h6M10 16h4" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 4h8v3.5a4 4 0 0 1-8 0V4Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 6H5.5A2.5 2.5 0 0 0 8 8.5M16 6h2.5A2.5 2.5 0 0 1 16 8.5M12 12v4M9 20h6M10 16h4" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               ),
             },
@@ -225,8 +225,8 @@ function SupportSection() {
               label: "Foundation's Promotional and Advertising Expenses",
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <path d="M4 14h3l8 4V6L7 10H4v4Z" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M7 14l1.4 4H11M18 9.5c.8.6 1.2 1.5 1.2 2.5s-.4 1.9-1.2 2.5" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 14h3l8 4V6L7 10H4v4Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 14l1.4 4H11M18 9.5c.8.6 1.2 1.5 1.2 2.5s-.4 1.9-1.2 2.5" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               ),
             },
@@ -234,9 +234,9 @@ function SupportSection() {
               label: "Daily Operations and Management Costs",
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <rect x="6" y="4" width="12" height="17" rx="2" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9.5 4.5A2.5 2.5 0 0 1 12 2a2.5 2.5 0 0 1 2.5 2.5V6h-5V4.5Z" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9.5 11.5l1.4 1.4 3.6-3.8M9.5 17h5" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="6" y="4" width="12" height="17" rx="2" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9.5 4.5A2.5 2.5 0 0 1 12 2a2.5 2.5 0 0 1 2.5 2.5V6h-5V4.5Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9.5 11.5l1.4 1.4 3.6-3.8M9.5 17h5" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               ),
             },
@@ -269,12 +269,12 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] top-0 left-0 -translate-x-1/4 -translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:left-0 sm:-translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#f09345" }} />
+            style={{ background: "#E48D62" }} />
           {/* Teal glow */}
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] bottom-0 right-0 translate-x-1/4 translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:right-0 sm:translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#1eb8e7" }} />
+            style={{ background: "#3DB0D3" }} />
 
           {/* Left rings — desktop */}
           <svg className="absolute pointer-events-none hidden sm:block" aria-hidden
@@ -313,7 +313,7 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           </svg>
 
           <div className="relative z-10 flex flex-col gap-4 max-w-[640px] items-center">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#1eb8e7] tracking-[-0.36px]">
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#3DB0D3] tracking-[-0.36px]">
               Get Involved
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[26px] sm:text-[34px] lg:text-[44px] text-black tracking-[-0.88px] leading-[1.2]">
@@ -326,10 +326,10 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
           <div className="relative z-10 flex flex-wrap justify-center gap-3">
             <button onClick={() => onNavigate("donate")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 bg-[#e5f4fb] rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[16px] whitespace-nowrap">Donate for Us</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[16px] whitespace-nowrap">Donate for Us</span>
             </button>
             <button onClick={() => onNavigate("contact")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 bg-[#fef2e5] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[16px] whitespace-nowrap">Contact Our Team</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[16px] whitespace-nowrap">Contact Our Team</span>
             </button>
           </div>
         </div>
@@ -370,7 +370,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             {(["About", "Events", "Classes", "Art Foundation", "Volunteer", "Donate", "Contact"] as const).map((l) => (
               <p key={l}
                 onClick={() => { if (l === "About") onNavigate("about"); else if (l === "Events") onNavigate("events"); else if (l === "Classes") onNavigate("classes"); else if (l === "Art Foundation") onNavigate("artfoundation"); else if (l === "Volunteer") onNavigate("volunteer"); else if (l === "Donate") onNavigate("donate"); else if (l === "Contact") onNavigate("contact"); }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors">
                 {l}
               </p>
             ))}
@@ -378,9 +378,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -393,7 +393,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#1eb8e7] transition-colors no-underline">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">
                 {name}
               </a>
             ))}
@@ -406,8 +406,8 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             </p>
             <div className="flex flex-col gap-2 mt-1">
               <input type="email" placeholder="Email address"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors" />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors" />
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>

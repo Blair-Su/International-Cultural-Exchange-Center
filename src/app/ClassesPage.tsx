@@ -18,7 +18,7 @@ function HeroSection() {
       <img src={heroImg} alt="ICEC Cultural Classes" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#f09345] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
+        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
           Programs
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
@@ -36,7 +36,7 @@ function ContactButton({ onNavigate }: { onNavigate: (page: Page) => void }) {
       onClick={() => onNavigate("contact")}
       className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#fef2e5] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors self-start"
     >
-      <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[18px] whitespace-nowrap">
+      <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">
         Contact for Details →
       </span>
     </button>
@@ -53,7 +53,7 @@ function OverviewSection() {
           {/* Text */}
           <div className="flex flex-col gap-8 w-full lg:flex-1">
             <div>
-              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
                 Cultural Classes
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
@@ -91,7 +91,7 @@ function ClassCard({ eyebrow, title, body, img, imgAlt, reverse, onNavigate }: C
       {/* Text */}
       <div className="flex flex-col gap-6 w-full lg:flex-1">
         <div>
-          <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[#1eb8e7] tracking-[-0.3px] leading-[1.45] uppercase">
+          <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[#3DB0D3] tracking-[-0.3px] leading-[1.45] uppercase">
             {eyebrow}
           </p>
           <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[26px] sm:text-[32px] lg:text-[38px] text-black tracking-[-0.76px] leading-[1.25] mt-1">
@@ -159,7 +159,7 @@ function ClassesSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               <ul className="flex flex-col gap-2">
                 {["Hanfu Knowledge Dissemination", "Runway Shows"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <span className="w-[6px] h-[6px] rounded-full bg-[#f09345] shrink-0" />
+                    <span className="w-[6px] h-[6px] rounded-full bg-[#E48D62] shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -208,7 +208,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               <p
                 key={l}
                 onClick={() => { if (l === "About") onNavigate("about"); else if (l === "Events") onNavigate("events"); else if (l === "Classes") onNavigate("classes"); else if (l === "Art Foundation") onNavigate("artfoundation"); else if (l === "Volunteer") onNavigate("volunteer"); else if (l === "Donate") onNavigate("donate"); else if (l === "Contact") onNavigate("contact"); }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors"
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors"
               >
                 {l}
               </p>
@@ -218,9 +218,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           {/* Contact */}
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -234,7 +234,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#1eb8e7] transition-colors no-underline">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">
                 {name}
               </a>
             ))}
@@ -250,9 +250,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               <input
                 type="email"
                 placeholder="Email address"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors"
+                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors"
               />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>

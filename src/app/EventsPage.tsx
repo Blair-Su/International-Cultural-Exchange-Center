@@ -65,15 +65,15 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             {(["About", "Events", "Classes", "Art Foundation", "Volunteer", "Donate", "Contact"] as const).map((l) => (
               <p key={l}
                 onClick={() => { if (l === "About") onNavigate("about"); else if (l === "Events") onNavigate("events"); else if (l === "Classes") onNavigate("classes"); else if (l === "Art Foundation") onNavigate("artfoundation"); else if (l === "Volunteer") onNavigate("volunteer"); else if (l === "Donate") onNavigate("donate"); else if (l === "Contact") onNavigate("contact"); }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors">{l}</p>
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors">{l}</p>
             ))}
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -86,7 +86,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#1eb8e7] transition-colors no-underline">{name}</a>
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">{name}</a>
             ))}
           </div>
 
@@ -94,8 +94,8 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Stay Connected</p>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.55)] leading-[1.5]">Subscribe for updates on events and programs.</p>
             <div className="flex flex-col gap-2 mt-1">
-              <input type="email" placeholder="Email address" className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors" />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+              <input type="email" placeholder="Email address" className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors" />
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>
@@ -144,7 +144,7 @@ function Carousel({ groups, cols }: { groups: string[][]; cols: string }) {
         <div className="flex items-center gap-2">
           {groups.map((_, i) => (
             <button key={i} onClick={() => setCurrent(i)}
-              className={`rounded-full transition-all ${i === current ? "w-6 h-2 bg-[#f09345]" : "w-2 h-2 bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.4)]"}`} />
+              className={`rounded-full transition-all ${i === current ? "w-6 h-2 bg-[#E48D62]" : "w-2 h-2 bg-[rgba(0,0,0,0.2)] hover:bg-[rgba(0,0,0,0.4)]"}`} />
           ))}
         </div>
         <button onClick={next} className="flex w-[40px] h-[40px] items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] hover:bg-white hover:border-[rgba(0,0,0,0.3)] transition-colors">
@@ -179,7 +179,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
 
         {/* Back button */}
         <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pt-8 w-full">
-          <button onClick={onBack} className="flex items-center gap-2 text-[#1eb8e7] font-['Inter:Medium',sans-serif] font-medium text-[14px] hover:opacity-75 transition-opacity">
+          <button onClick={onBack} className="flex items-center gap-2 text-[#3DB0D3] font-['Inter:Medium',sans-serif] font-medium text-[14px] hover:opacity-75 transition-opacity">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             Back to Events
           </button>
@@ -193,7 +193,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
               {/* Left — info */}
               <div className="flex flex-col gap-8 w-full lg:flex-1">
                 <div>
-                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#f09345] tracking-[-0.32px] leading-[1.45] mb-2">Upcoming Event</p>
+                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">Upcoming Event</p>
                   <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[32px] sm:text-[44px] lg:text-[52px] text-black tracking-[-1.04px] leading-[1.15] mb-3">Flower Festival</h1>
                   <p className="font-['Inter:Regular',sans-serif] font-normal text-[16px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.6]">Celebrate spring through culture, creativity, and community.</p>
                 </div>
@@ -204,8 +204,8 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                     {
                       icon: (
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                          <rect x="3" y="4" width="18" height="18" rx="2" stroke="#1eb8e7" strokeWidth="1.8"/>
-                          <path d="M16 2v4M8 2v4M3 10h18" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round"/>
+                          <rect x="3" y="4" width="18" height="18" rx="2" stroke="#3DB0D3" strokeWidth="1.8"/>
+                          <path d="M16 2v4M8 2v4M3 10h18" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
                         </svg>
                       ),
                       label: "Date", value: "April 2027",
@@ -213,8 +213,8 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                     {
                       icon: (
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                          <circle cx="12" cy="9" r="2.5" stroke="#1eb8e7" strokeWidth="1.8"/>
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                          <circle cx="12" cy="9" r="2.5" stroke="#3DB0D3" strokeWidth="1.8"/>
                         </svg>
                       ),
                       label: "Location", value: "Location to Be Announced",
@@ -222,9 +222,9 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                     {
                       icon: (
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                          <path d="M2 9V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round"/>
-                          <path d="M2 9a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round"/>
-                          <path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round"/>
+                          <path d="M2 9V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
+                          <path d="M2 9a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
+                          <path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
                         </svg>
                       ),
                       label: "Admission", value: "Free",
@@ -306,7 +306,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
           <img src={eventsHeroImg} alt="ICEC Events" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#f09345] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">Programs</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">Programs</p>
             <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2]">Events</h1>
           </div>
         </div>
@@ -320,7 +320,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
               </h2>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65] mb-8">Discover upcoming ICEC festivals, performances, workshops, and cultural programs.</p>
               <div className="flex flex-wrap gap-3">
-                <button onClick={() => document.getElementById("upcoming-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#f09345] rounded-[4px] hover:bg-[#e0843a] transition-colors cursor-pointer">
+                <button onClick={() => document.getElementById("upcoming-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#E48D62] rounded-[4px] hover:bg-[#D87B52] transition-colors cursor-pointer">
                   <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Explore Upcoming Events</span>
                 </button>
                 <button onClick={() => document.getElementById("past-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#e5f4fb] rounded-[4px] hover:bg-[#d0ecf8] transition-colors cursor-pointer">
@@ -334,7 +334,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
         {/* Upcoming Event */}
         <section id="upcoming-events" className="w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45] mb-1">Upcoming Event</h5>
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-1">Upcoming Event</h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">{"What's Coming Next"}</h2>
 
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[64px] bg-white rounded-[20px] p-6 lg:p-10 border border-[rgba(0,0,0,0.08)] shadow-[0px_4px_16px_0px_rgba(0,0,0,0.05)]">
@@ -355,7 +355,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
                 </div>
                 <button onClick={onViewFlowerFestival}
                   className="inline-flex items-center gap-2 h-[46px] px-6 bg-[#e5f4fb] rounded-[4px] hover:bg-[#d0ecf8] transition-colors cursor-pointer self-start">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] whitespace-nowrap">View Details →</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] whitespace-nowrap">View Details →</span>
                 </button>
               </div>
               {/* Poster */}
@@ -369,7 +369,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
         {/* Past Events */}
         <section id="past-events" className="w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45] mb-1">Past Events</h5>
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-1">Past Events</h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">Moments We've Shared</h2>
             <PastEventsCarousel />
           </div>

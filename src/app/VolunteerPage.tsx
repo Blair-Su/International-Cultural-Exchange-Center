@@ -13,7 +13,7 @@ function HeroSection() {
       <img src={heroImg} alt="Volunteer with ICEC" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#f09345] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
+        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
           Get Involved
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
@@ -33,7 +33,7 @@ function IntroSection() {
 
           <div className="flex flex-col gap-8 w-full lg:flex-1">
             <div>
-              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
                 Volunteer with ICEC
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
@@ -43,7 +43,7 @@ function IntroSection() {
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
               ICEC volunteers support cultural events, educational programs, and community activities. Whether helping behind the scenes or welcoming guests, every contribution helps create a better experience for the community.
             </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#f09345] rounded-[4px] cursor-pointer hover:bg-[#e0843a] transition-colors no-underline self-start">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#E48D62] rounded-[4px] cursor-pointer hover:bg-[#D87B52] transition-colors no-underline self-start">
               <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Become a Volunteer →</span>
             </a>
           </div>
@@ -52,8 +52,8 @@ function IntroSection() {
           <div className="w-full lg:w-[380px] lg:shrink-0 bg-white rounded-[16px] p-7 border border-[rgba(0,0,0,0.08)] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.04)] flex flex-col gap-4">
             <div className="w-[48px] h-[48px] rounded-[12px] bg-[#fef2e5] flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 15l-3.09 1.63.59-3.43L7 10.77l3.45-.5L12 7l1.55 3.27 3.45.5-2.5 2.43.59 3.43L12 15z" stroke="#f09345" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="#f09345" strokeWidth="1.8"/>
+                <path d="M12 15l-3.09 1.63.59-3.43L7 10.77l3.45-.5L12 7l1.55 3.27 3.45.5-2.5 2.43.59 3.43L12 15z" stroke="#E48D62" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="12" cy="12" r="10" stroke="#E48D62" strokeWidth="1.8"/>
               </svg>
             </div>
             <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">
@@ -73,7 +73,7 @@ function IntroSection() {
 // ── Roles ─────────────────────────────────────────────────────────
 const ROLES = [
   {
-    color: "#f09345",
+    color: "#E48D62",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -85,7 +85,7 @@ const ROLES = [
     desc: "Setup, check-in, guest guidance, and on-site assistance.",
   },
   {
-    color: "#1eb8e7",
+    color: "#3DB0D3",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -96,7 +96,7 @@ const ROLES = [
     desc: "Assist with classes, workshops, and cultural activities.",
   },
   {
-    color: "#f09345",
+    color: "#E48D62",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="2" width="20" height="20" rx="2.18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -107,7 +107,7 @@ const ROLES = [
     desc: "Photography, video, social media, and event promotion.",
   },
   {
-    color: "#1eb8e7",
+    color: "#3DB0D3",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8"/>
@@ -124,7 +124,7 @@ function RolesSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[56px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Volunteer Roles
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
@@ -158,7 +158,7 @@ const GAINS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="#f09345" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="#E48D62" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     label: "Hands-on experience",
@@ -166,9 +166,9 @@ const GAINS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="9" cy="7" r="4" stroke="#1eb8e7" strokeWidth="1.8"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="9" cy="7" r="4" stroke="#3DB0D3" strokeWidth="1.8"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     label: "Community connections",
@@ -176,7 +176,7 @@ const GAINS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#f09345" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#E48D62" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     label: "New skills",
@@ -184,8 +184,8 @@ const GAINS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 15l-3.09 1.63.59-3.43L7 10.77l3.45-.5L12 7l1.55 3.27 3.45.5-2.5 2.43.59 3.43L12 15z" stroke="#1eb8e7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="12" cy="12" r="10" stroke="#1eb8e7" strokeWidth="1.8"/>
+        <path d="M12 15l-3.09 1.63.59-3.43L7 10.77l3.45-.5L12 7l1.55 3.27 3.45.5-2.5 2.43.59 3.43L12 15z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="10" stroke="#3DB0D3" strokeWidth="1.8"/>
       </svg>
     ),
     label: "Certificate of appreciation",
@@ -199,7 +199,7 @@ function GainsSection() {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[96px]">
 
           <div className="flex flex-col gap-4 w-full lg:w-[400px] lg:shrink-0">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
               Benefits
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25]">
@@ -242,12 +242,12 @@ function CTASection() {
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] top-0 left-0 -translate-x-1/4 -translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:left-0 sm:-translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#f09345" }} />
+            style={{ background: "#E48D62" }} />
           {/* Teal glow */}
           <div className="absolute pointer-events-none rounded-full blur-[60px] opacity-40 z-0
             w-[200px] h-[200px] bottom-0 right-0 translate-x-1/4 translate-y-1/4
             sm:w-[380px] sm:h-[380px] sm:top-1/2 sm:right-0 sm:translate-x-1/2 sm:-translate-y-1/2"
-            style={{ background: "#1eb8e7" }} />
+            style={{ background: "#3DB0D3" }} />
 
           {/* Left rings desktop */}
           <svg className="absolute pointer-events-none hidden sm:block" aria-hidden
@@ -284,7 +284,7 @@ function CTASection() {
           </svg>
 
           <div className="relative z-10 flex flex-col gap-4 max-w-[620px] items-center">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#1eb8e7] tracking-[-0.36px]">
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#3DB0D3] tracking-[-0.36px]">
               Join Us
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[26px] sm:text-[34px] lg:text-[44px] text-black tracking-[-0.88px] leading-[1.2]">
@@ -296,7 +296,7 @@ function CTASection() {
           </div>
 
           <div className="relative z-10">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 bg-[#f09345] rounded-[4px] cursor-pointer hover:bg-[#e0843a] transition-colors no-underline">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 bg-[#E48D62] rounded-[4px] cursor-pointer hover:bg-[#D87B52] transition-colors no-underline">
               <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Become a Volunteer →</span>
             </a>
           </div>
@@ -345,7 +345,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
                   else if (l === "Volunteer") onNavigate("volunteer");
                   else if (l === "Donate") onNavigate("donate");
                 }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors">
                 {l}
               </p>
             ))}
@@ -353,9 +353,9 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -368,7 +368,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#1eb8e7] transition-colors no-underline">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">
                 {name}
               </a>
             ))}
@@ -381,8 +381,8 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             </p>
             <div className="flex flex-col gap-2 mt-1">
               <input type="email" placeholder="Email address"
-                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors" />
-              <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors" />
+              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
               </button>
             </div>

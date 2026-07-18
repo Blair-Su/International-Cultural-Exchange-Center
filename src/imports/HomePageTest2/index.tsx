@@ -51,10 +51,10 @@ function PinIcon() {
 function CalendarIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d={svgPaths.p32f12c00} stroke="#1EB8E7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M16 2V6" stroke="#1EB8E7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M8 2V6" stroke="#1EB8E7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M3 10H21" stroke="#1EB8E7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p32f12c00} stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M16 2V6" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M8 2V6" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M3 10H21" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -62,7 +62,7 @@ function CalendarIcon() {
 function HeartIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d={svgPaths.p3ee62280} stroke="#1EB8E7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p3ee62280} stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -70,11 +70,11 @@ function HeartIcon() {
 function GiftIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d="M20 12V22H4V12" stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M22 7H2V12H22V7Z" stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M12 22V7" stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p22b4c780} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p2fc89700} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M20 12V22H4V12" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M22 7H2V12H22V7Z" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M12 22V7" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p22b4c780} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p2fc89700} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -82,10 +82,10 @@ function GiftIcon() {
 function UsersIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d={svgPaths.p33705900} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p161d4800} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p2b304d00} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p13e20900} stroke="#F09345" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p33705900} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p161d4800} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p2b304d00} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p13e20900} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -107,10 +107,10 @@ function HeroSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-[18px]">
             <button onClick={() => onNavigate("events")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">Explore Events →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Explore Events →</span>
             </button>
             <button onClick={() => document.getElementById("our-work")?.scrollIntoView({ behavior: "smooth" })} className="bg-[#fef2e5] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[18px] whitespace-nowrap">Our Programs →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Our Programs →</span>
             </button>
           </div>
         </div>
@@ -134,7 +134,7 @@ function AboutUsSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
         {/* Text */}
         <div className="flex flex-col gap-8 w-full lg:w-[480px] lg:shrink-0">
           <div>
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#f09345] tracking-[-0.48px] leading-[1.45]">
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
               About Us
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.48px] leading-[1.25] mt-1">
@@ -147,7 +147,7 @@ function AboutUsSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
             <p>Our mission is to nurture talent, celebrate cultural heritage, and inspire meaningful connections through the arts.</p>
           </div>
           <button onClick={() => onNavigate?.("about")} className="bg-[#fef2e5] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer hover:bg-[#fde8d0] transition-colors">
-            <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[18px] whitespace-nowrap">Read our Story</span>
+            <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Read our Story</span>
           </button>
         </div>
 
@@ -186,21 +186,21 @@ function WhatWeDoSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
       img: imgFestival,
       title: "Events",
       desc: "Celebrate cultural traditions through festivals, performances, and community events that bring people together.",
-      linkColor: "#f09345",
+      linkColor: "#E48D62",
       onClick: () => onNavigate("events"),
     },
     {
       img: imgProgram,
       title: "Classes",
       desc: "Discover workshops, educational programs, and hands-on cultural experiences designed for all ages.",
-      linkColor: "#1eb8e7",
+      linkColor: "#3DB0D3",
       onClick: () => onNavigate("classes"),
     },
     {
       img: imgImage2,
       title: "Donation",
       desc: "Help preserve cultural heritage and create more opportunities for communities to learn, connect, and celebrate together.",
-      linkColor: "#f09345",
+      linkColor: "#E48D62",
       onClick: () => onNavigate("donate"),
     },
   ];
@@ -209,7 +209,7 @@ function WhatWeDoSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
     <section id="our-work" className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] z-[2]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[72px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Our Work
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45] mt-1">
@@ -301,7 +301,7 @@ function EventsSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               <EventMeta date="Apr, 2027" coming="Location Details Coming Soon" />
             </div>
             <button onClick={() => onNavigate("flower-festival")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
             </button>
           </div>
           <div className="w-full lg:flex-1 h-[220px] sm:h-[300px] lg:h-[432px] rounded-[16px] overflow-hidden">
@@ -343,7 +343,7 @@ function GallerySection({ onNavigate }: { onNavigate: (page: Page) => void }) {
       </div>
       <div className="flex justify-center mt-10 lg:mt-[72px]">
         <button onClick={() => onNavigate("events-gallery")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-          <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">View More →</span>
+          <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">View More →</span>
         </button>
       </div>
     </section>
@@ -360,7 +360,7 @@ function GetInvolvedSection({ onNavigate }: { onNavigate: (page: Page) => void }
         <div className="flex flex-col gap-9 w-full lg:w-[478px] lg:shrink-0">
           <div className="flex flex-col gap-4">
             <div>
-              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#1eb8e7] tracking-[-0.48px] leading-[1.45]">
+              <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
                 Support Us
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
@@ -373,17 +373,17 @@ function GetInvolvedSection({ onNavigate }: { onNavigate: (page: Page) => void }
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap gap-3">
-              <button onClick={() => onNavigate("events")} className="flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] border-2 border-[#1eb8e7] cursor-pointer hover:bg-[#e5f4fb] transition-colors">
+              <button onClick={() => onNavigate("events")} className="flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] border-2 border-[#3DB0D3] cursor-pointer hover:bg-[#e5f4fb] transition-colors">
                 <CalendarIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">Attend an Event</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Attend an Event</span>
               </button>
               <button onClick={() => onNavigate("volunteer")} className="bg-[#e5f4fb] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
                 <HeartIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#1eb8e7] text-[15px] lg:text-[18px] whitespace-nowrap">Volunteer</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Volunteer</span>
               </button>
               <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer">
                 <GiftIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#f09345] text-[15px] lg:text-[18px] whitespace-nowrap">Donate</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Donate</span>
               </button>
             </div>
             <div className="flex items-center gap-4">
@@ -439,7 +439,7 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
             <p
               key={l}
               onClick={() => l === "About" ? onNavigate?.("about") : l === "Events" ? onNavigate?.("events") : l === "Classes" ? onNavigate?.("classes") : l === "Art Foundation" ? onNavigate?.("artfoundation") : l === "Volunteer" ? onNavigate?.("volunteer") : l === "Contact" ? onNavigate?.("contact") : undefined}
-              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#f09345] transition-colors"
+              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors"
             >
               {l}
             </p>
@@ -449,9 +449,9 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
         {/* Contact */}
         <div className="flex flex-col gap-3">
           <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-          <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">icecnyc@gmail.com</a>
-          <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">+1(347) 564-3593</a>
-          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#f09345] transition-colors no-underline">WeChat: NY国潮君</a>
+          <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+          <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
+          <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
           {/* WeChat QR below WeChat handle */}
           <div className="flex items-center gap-4 mt-1">
             <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
@@ -466,7 +466,7 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
           <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Social</p>
           {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
             <a key={name} href={url} target="_blank" rel="noopener noreferrer"
-              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#1eb8e7] transition-colors no-underline">
+              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#3DB0D3] transition-colors no-underline">
               {name}
             </a>
           ))}
@@ -482,9 +482,9 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
             <input
               type="email"
               placeholder="Email address"
-              className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#f09345] transition-colors"
+              className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.6)] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors"
             />
-            <button className="bg-[#f09345] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#e0843a] transition-colors">
+            <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
               <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
             </button>
           </div>

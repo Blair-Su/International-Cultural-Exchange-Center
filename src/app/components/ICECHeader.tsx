@@ -89,7 +89,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
           onClick={() => { setLang(l); setLangOpen(false); }}
           className={[
             "w-full text-left px-[14px] py-[9px] font-['Inter',sans-serif] font-medium text-[14px] leading-[1.2] transition-colors hover:bg-gray-50",
-            l === lang ? "text-[#f09345]" : "text-[#333]",
+            l === lang ? "text-[#E48D62]" : "text-[#333]",
           ].join(" ")}
         >
           {l}
@@ -207,7 +207,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                 )
               )}
               <div onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex h-[38px] items-center justify-center px-[14px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
-                <span className="font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] text-[#f09345] leading-[1.2]">
+                <span className="font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] text-[#E48D62] leading-[1.2]">
                   Donate
                 </span>
               </div>
@@ -266,7 +266,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                     onClick={() => { if (page) { onNavigate(page); close(); } }}
                     className={[
                       "text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] border-b border-black/[0.06] last:border-0 transition-colors",
-                      activePage === page ? "text-[#f09345] font-semibold" : "text-[rgba(50,50,50,0.8)] hover:text-black",
+                      activePage === page ? "text-[#E48D62] font-semibold" : "text-[rgba(50,50,50,0.8)] hover:text-black",
                     ].join(" ")}
                   >
                     {label}
@@ -277,7 +277,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                 onClick={() => { onNavigate("donate"); close(); }}
                 className="mt-3 mb-4 bg-[#fef2e5] flex h-[46px] items-center justify-center rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors"
               >
-                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-[#f09345]">Donate</span>
+                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-[#E48D62]">Donate</span>
               </div>
             </div>
           </div>
