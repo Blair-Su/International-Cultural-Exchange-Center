@@ -104,7 +104,7 @@ export default function ContactPage({ onNavigate }: Props) {
 
               <div className="flex flex-col gap-3">
                 <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-4">
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-black tracking-[-0.36px]">Contact Information</h3>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">Contact Information</h3>
                   <div className="flex flex-col gap-4">
                     <div className="flex items-start gap-3">
                       <div className="w-[36px] h-[36px] rounded-full bg-[#fef2e5] flex items-center justify-center shrink-0 mt-[1px]">
@@ -112,7 +112,7 @@ export default function ContactPage({ onNavigate }: Props) {
                       </div>
                       <div>
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">Email</p>
-                        <a href="mailto:info@icecnyc.org" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-black hover:opacity-75 transition-opacity no-underline">info@icecnyc.org</a>
+                        <a href="mailto:info@icecnyc.org" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">info@icecnyc.org</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -121,7 +121,7 @@ export default function ContactPage({ onNavigate }: Props) {
                       </div>
                       <div>
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">Phone</p>
-                        <a href="tel:+13475643593" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-black hover:opacity-75 transition-opacity no-underline">+1(347) 564-3593</a>
+                        <a href="tel:+13475643593" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">+1(347) 564-3593</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -130,7 +130,7 @@ export default function ContactPage({ onNavigate }: Props) {
                       </div>
                       <div>
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">Location</p>
-                        <p className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-black">New York, NY</p>
+                        <p className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black">New York, NY</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -139,12 +139,12 @@ export default function ContactPage({ onNavigate }: Props) {
                       </div>
                       <div className="flex flex-col gap-3">
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px]">WeChat</p>
-                        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-black hover:opacity-75 transition-opacity no-underline">NY国潮君</a>
+                        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">NY国潮君</a>
                         <div className="flex items-center gap-3 mt-1">
                           <a href={imgWeChatQr} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
                             <img src={imgWeChatQr} alt="WeChat QR code" className="w-[72px] h-[72px] rounded-[6px] object-cover" />
                           </a>
-                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.5)] leading-[1.35] max-w-[180px]">Scan to follow us on WeChat</p>
+                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.5)] leading-[1.6] max-w-[180px]">Scan to follow us on WeChat</p>
                         </div>
                       </div>
                     </div>
@@ -152,7 +152,7 @@ export default function ContactPage({ onNavigate }: Props) {
                 </div>
 
                 <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-4">
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-black tracking-[-0.36px]">Social Media</h3>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">Social Media</h3>
                   <div className="flex flex-col gap-3">
                     {SOCIAL_ITEMS.map(({ name, url, icon, bg, hover }) => (
                       <a key={name} href={url} target="_blank" rel="noopener noreferrer"
@@ -160,7 +160,7 @@ export default function ContactPage({ onNavigate }: Props) {
                         <div className={`w-[32px] h-[32px] rounded-full flex items-center justify-center shrink-0 transition-colors ${bg} ${hover}`}>
                           {icon}
                         </div>
-                        <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] group-hover:text-[#333] transition-colors">{name}</span>
+                        <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.68)] group-hover:text-[#333] transition-colors">{name}</span>
                       </a>
                     ))}
                   </div>
