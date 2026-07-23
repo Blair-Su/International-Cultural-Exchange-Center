@@ -184,7 +184,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                         {children.map((sub) => {
                           const subPage = sub === "Classes" ? "classes" as const : sub === "Art Foundation" ? "artfoundation" as const : sub === "Events" ? "events" as const : undefined;
                           return (
-                            <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); setProgramsOpen(false); } }} className="w-full text-left px-[16px] py-[10px] font-['Inter',sans-serif] font-medium text-[14px] text-[#333] hover:bg-gray-50 hover:text-black transition-colors whitespace-nowrap">
+                            <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); setProgramsOpen(false); } }} className="w-full text-left px-[16px] py-[10px] font-['Inter',sans-serif] font-medium text-[14px] text-[#333] hover:bg-gray-50 hover:text-black transition-colors whitespace-nowrap cursor-pointer">
                               {sub}
                             </button>
                           );
@@ -214,7 +214,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
             </nav>
 
             <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-black/5 active:bg-black/10 transition-colors shrink-0"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-black/5 active:bg-black/10 transition-colors shrink-0 cursor-pointer"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
@@ -240,7 +240,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                   <div key={label} className="border-b border-black/[0.06]">
                     <button
                       onClick={() => setMobilePrograms(!mobilePrograms)}
-                      className="w-full flex items-center justify-between text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] text-[rgba(50,50,50,0.8)] hover:text-black transition-colors"
+                      className="w-full flex items-center justify-between text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] text-[rgba(50,50,50,0.8)] hover:text-black transition-colors cursor-pointer"
                     >
                       {label}
                       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className={`transition-transform duration-150 ${mobilePrograms ? "rotate-180" : ""}`}>
@@ -252,7 +252,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                         {children.map((sub) => {
                           const subPage = sub === "Classes" ? "classes" as const : sub === "Art Foundation" ? "artfoundation" as const : sub === "Events" ? "events" as const : undefined;
                           return (
-                            <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); close(); } }} className="text-left font-['Inter',sans-serif] font-medium text-[15px] py-[10px] text-[rgba(50,50,50,0.7)] hover:text-black transition-colors">
+                            <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); close(); } }} className="text-left font-['Inter',sans-serif] font-medium text-[15px] py-[10px] text-[rgba(50,50,50,0.7)] hover:text-black transition-colors cursor-pointer">
                               {sub}
                             </button>
                           );
@@ -265,7 +265,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                     key={label}
                     onClick={() => { if (page) { onNavigate(page); close(); } }}
                     className={[
-                      "text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] border-b border-black/[0.06] last:border-0 transition-colors",
+                      "text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] border-b border-black/[0.06] last:border-0 transition-colors cursor-pointer",
                       activePage === page ? "text-[#E48D62] font-semibold" : "text-[rgba(50,50,50,0.8)] hover:text-black",
                     ].join(" ")}
                   >
