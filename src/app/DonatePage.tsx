@@ -114,12 +114,18 @@ export default function DonatePage({ onNavigate }: Props) {
                   </p>
 
                   <div className="flex flex-wrap gap-2">
-                    <div className="inline-flex items-center justify-center gap-2.5 h-[44px] px-4 rounded-[4px] border border-[#E48D62] bg-white shadow-[0px_2px_8px_0px_rgba(233,139,97,0.18)] cursor-default">
+                    <a
+                      href="https://wise.com/pay/r/yCjfL9y57-Ve6AA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2.5 h-[44px] px-4 rounded-[4px] border border-[#E48D62] bg-white shadow-[0px_2px_8px_0px_rgba(233,139,97,0.18)] transition hover:border-[#d97745] hover:shadow-[0px_4px_12px_0px_rgba(233,139,97,0.24)]"
+                    >
+                      <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[#202020]">Pay with</span>
                       <span className="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[6px] overflow-hidden shrink-0 bg-[#98E872]">
                         <img src={wiseIcon} alt="Wise" className="w-[30px] h-[30px] object-cover" />
                       </span>
                       <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[#202020]">Wise</span>
-                    </div>
+                    </a>
                   </div>
 
                   <div className="rounded-[8px] border border-[rgba(0,0,0,0.1)] bg-white p-4 flex flex-col items-center gap-4">
