@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
 import wiseQr from "@/imports/wise-qr.jpg";
+import wiseIcon from "@/imports/wise-icon.jpeg";
 import imgLogoNobg from "@/imports/Frame_427319345.png";
 import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
 
@@ -111,6 +112,15 @@ export default function DonatePage({ onNavigate }: Props) {
                   <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-black tracking-[-0.36px]">
                     Payment Information
                   </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    <div className="inline-flex items-center justify-center gap-2.5 h-[44px] px-4 rounded-[4px] border border-[#E48D62] bg-white shadow-[0px_2px_8px_0px_rgba(233,139,97,0.18)] cursor-default">
+                      <span className="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[6px] overflow-hidden shrink-0 bg-[#98E872]">
+                        <img src={wiseIcon} alt="Wise" className="w-[30px] h-[30px] object-cover" />
+                      </span>
+                      <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[#202020]">Wise</span>
+                    </div>
+                  </div>
 
                   <div className="rounded-[8px] border border-[rgba(0,0,0,0.1)] bg-white p-4 flex flex-col items-center gap-4">
                     <div className="relative w-[180px] h-[180px] rounded-[6px] border border-[rgba(0,0,0,0.1)] bg-white overflow-hidden">
