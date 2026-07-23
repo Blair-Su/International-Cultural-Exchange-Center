@@ -353,7 +353,7 @@ function Footer({ onNavigate }: { onNavigate: (p: Page) => void }) {
               </p>
             </div>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.5]">
-              Preserving cultural heritage, strengthening communities, and inspiring future generations.
+              Preserving cultural heritage,<br />strengthening communities, and<br />inspiring future generations.
             </p>
           </div>
 

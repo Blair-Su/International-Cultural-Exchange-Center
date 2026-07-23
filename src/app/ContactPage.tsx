@@ -51,7 +51,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               <img src={imgLogoNobg} alt="ICEC logo" className="shrink-0 size-[48px] object-contain" />
               <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-black leading-[1.3] max-w-[200px]">International Cultural Exchange Center</p>
             </div>
-            <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.5]">Preserving cultural heritage, strengthening communities, and inspiring future generations.</p>
+            <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.5]">Preserving cultural heritage,<br />strengthening communities, and<br />inspiring future generations.</p>
           </div>
           <div className="flex flex-col gap-3">
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Quick Links</p>
