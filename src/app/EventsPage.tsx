@@ -50,7 +50,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
     <footer className="bg-[#f5f0eb] w-full pt-12 pb-8">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
@@ -89,18 +89,6 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
                 className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">{name}</a>
             ))}
           </div>
-
-          <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Stay Connected</p>
-            <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.55)] leading-[1.5]">Subscribe for updates on events and programs.</p>
-            <div className="flex flex-col gap-2 mt-1">
-              <input type="email" placeholder="Email address" className="font-['Inter:Regular',sans-serif] font-normal text-[13px] placeholder:text-[rgba(0,0,0,0.35)] bg-white border border-[rgba(0,0,0,0.18)] rounded-[4px] px-3 h-[36px] w-full outline-none focus:border-[#E48D62] transition-colors" />
-              <button className="bg-[#E48D62] flex h-[36px] items-center justify-center rounded-[4px] w-full cursor-pointer hover:bg-[#D87B52] transition-colors">
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[13px] text-white">Subscribe</span>
-              </button>
-            </div>
-          </div>
-
         </div>
         <div className="border-t border-[rgba(0,0,0,0.1)] mt-10 pt-6 text-center">
           <p className="font-['Inter:Regular',sans-serif] font-normal text-[12px] text-[rgba(0,0,0,0.4)]">© 2026 International Cultural Exchange Center. All rights reserved.</p>
