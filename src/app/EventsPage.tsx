@@ -268,7 +268,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
               {/* Right — poster */}
               <div className="w-full lg:w-[400px] xl:w-[440px] lg:shrink-0">
                 <div className="rounded-[16px] overflow-hidden shadow-[0px_8px_32px_0px_rgba(0,0,0,0.12)] aspect-[3/4]">
-                  <img src={flowerPosterImg} alt="Flower Festival poster" className="w-full h-full object-cover" />
+                  <img src={flowerPosterImg} alt="Flower Festival poster" className="w-full h-full object-cover object-[42%_center]" />
                 </div>
               </div>
 
