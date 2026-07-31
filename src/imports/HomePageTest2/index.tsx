@@ -439,7 +439,7 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
             <p
               key={l}
               onClick={() => l === "About" ? onNavigate?.("about") : l === "Events" ? onNavigate?.("events") : l === "Classes" ? onNavigate?.("classes") : l === "Art Foundation" ? onNavigate?.("artfoundation") : l === "Volunteer" ? onNavigate?.("volunteer") : l === "Contact" ? onNavigate?.("contact") : undefined}
-              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#E48D62] transition-colors"
+              className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#2563EB] transition-colors"
             >
               {l}
             </p>
@@ -449,7 +449,7 @@ function FooterSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
         {/* Contact */}
         <div className="flex flex-col gap-3">
           <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
-          <a href="mailto:icecnyc@gmail.com" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">icecnyc@gmail.com</a>
+          <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">event@icecnyc.org</a>
           <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
           <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
           {/* WeChat QR below WeChat handle */}
