@@ -152,13 +152,13 @@ function AboutUsSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
         </div>
 
         {/* Collage — desktop staggered, mobile simple grid */}
-        <div className="w-full lg:w-auto lg:shrink-0">
+        <div className="w-full lg:flex-1 lg:min-w-0">
           {/* Desktop */}
-          <div className="hidden lg:block relative" style={{ width: 680, height: 580 }}>
-            <div className="absolute top-0 left-0 w-[410px] h-[420px] overflow-hidden">
+          <div className="hidden lg:block relative w-full h-[580px]">
+            <div className="absolute top-0 left-0 w-[60.3%] h-[420px] overflow-hidden">
               <img src={imgCollageImage1} alt="" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute top-[90px] left-[440px] w-[240px] h-[280px] overflow-hidden">
+            <div className="absolute top-[90px] left-[64.7%] w-[35.3%] h-[280px] overflow-hidden">
               <img src={imgCollageImage2} alt="" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-[450px] left-0 w-full h-[130px] overflow-hidden">
