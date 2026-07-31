@@ -10,7 +10,7 @@ import imgCollageImage3 from "./ed925e7b9deb5bcb5a613151266e1ffb1bf8956b.webp";
 import imgImage from "./f636714e4e3fa3e076d3d3b2e74713a01c278b96.webp";
 import imgImage1 from "./7df684caa4bc71ee78044bc4729cc6d28122e41d.webp";
 import imgImage2 from "./60fb78d567502a83f16f388bb9e32fe6d1d345a7.webp";
-import imgImage3 from "@/imports/Flower_Festival.webp";
+import imgImage3 from "./flower-festival-home-poster.webp";
 import imgImage4 from "./bf3af3af0d733be80f23eb35aa412a0022686c3a.webp";
 import imgImg2 from "./c507a2e479de17b67be9b9b85f4145d8f0f9fbf8.webp";
 import imgImg3 from "./e7efc3c8a46ab42f918e062007984bf85e22cb9e.webp";
