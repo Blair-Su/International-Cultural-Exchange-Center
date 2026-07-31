@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
 import eventsHeroImg from "@/imports/Events-1.webp";
-import flowerPosterImg from "@/imports/_____.webp";
+import flowerPosterImg from "@/imports/HomePageTest2/flower-festival-home-poster.webp";
 import imgLogoNobg from "@/imports/Frame_427319345.webp";
 import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
