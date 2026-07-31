@@ -1,8 +1,8 @@
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
-import xiaohongshuLogo from "@/imports/Xiaohongshu-___-Logo.png";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
+import xiaohongshuLogo from "@/imports/Xiaohongshu-___-Logo.webp";
 import wechatLogo from "@/imports/wechat-logo-vectorized.svg";
 
 interface Props { onNavigate: (page: Page) => void; }

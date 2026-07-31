@@ -1,26 +1,26 @@
 import { useState, useRef, useEffect } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import eventsHeroImg from "@/imports/Events-1.png";
-import flowerPosterImg from "@/imports/_____.JPG";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
+import eventsHeroImg from "@/imports/Events-1.webp";
+import flowerPosterImg from "@/imports/_____.webp";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
-import g3  from "@/imports/HomePageTest2/60fb78d567502a83f16f388bb9e32fe6d1d345a7.png";
-import g4  from "@/imports/HomePageTest2/074cba722191fabf2f00b521be282e9d18bf197f.png";
-import g6  from "@/imports/HomePageTest2/702f9592c5038ef2a394c3e9e8470c440724b362.png";
-import g7  from "@/imports/HomePageTest2/c507a2e479de17b67be9b9b85f4145d8f0f9fbf8.png";
-import g8  from "@/imports/HomePageTest2/385fdcf9699d64c97679669a95bc5856b7bd6052.png";
-import g9  from "@/imports/HomePageTest2/6e73769b31a32912a503b507f5117f079adfbcf9.png";
-import g10 from "@/imports/HomePageTest2/a3fc6fe1136c26b9b0f389e8e744e75113355e3a.png";
-import g11 from "@/imports/HomePageTest2/bf548cb711af21bde04a7e439ca04075ba148b2a.png";
-import g12 from "@/imports/HomePageTest2/e7efc3c8a46ab42f918e062007984bf85e22cb9e.png";
-import g13 from "@/imports/HomePageTest2/2ad461458467477f417e397896b024f213707698.png";
-import g14 from "@/imports/HomePageTest2/cdd37f2e2310a3125c4a6335dd21aa109c9b5925.png";
-import g15 from "@/imports/HomePageTest2/3e3411deea6a03e15090ace674f9b2cdf5248c1c.png";
-import gNew1 from "@/imports/ab1b2b9f413c35649918af4005736f52.png";
-import gNew2 from "@/imports/d01a9115c13d5bf6677652a6e001505d.png";
-import gNew3 from "@/imports/Hero_Section.JPG";
+import g3  from "@/imports/HomePageTest2/60fb78d567502a83f16f388bb9e32fe6d1d345a7.webp";
+import g4  from "@/imports/HomePageTest2/074cba722191fabf2f00b521be282e9d18bf197f.webp";
+import g6  from "@/imports/HomePageTest2/702f9592c5038ef2a394c3e9e8470c440724b362.webp";
+import g7  from "@/imports/HomePageTest2/c507a2e479de17b67be9b9b85f4145d8f0f9fbf8.webp";
+import g8  from "@/imports/HomePageTest2/385fdcf9699d64c97679669a95bc5856b7bd6052.webp";
+import g9  from "@/imports/HomePageTest2/6e73769b31a32912a503b507f5117f079adfbcf9.webp";
+import g10 from "@/imports/HomePageTest2/a3fc6fe1136c26b9b0f389e8e744e75113355e3a.webp";
+import g11 from "@/imports/HomePageTest2/bf548cb711af21bde04a7e439ca04075ba148b2a.webp";
+import g12 from "@/imports/HomePageTest2/e7efc3c8a46ab42f918e062007984bf85e22cb9e.webp";
+import g13 from "@/imports/HomePageTest2/2ad461458467477f417e397896b024f213707698.webp";
+import g14 from "@/imports/HomePageTest2/cdd37f2e2310a3125c4a6335dd21aa109c9b5925.webp";
+import g15 from "@/imports/HomePageTest2/3e3411deea6a03e15090ace674f9b2cdf5248c1c.webp";
+import gNew1 from "@/imports/ab1b2b9f413c35649918af4005736f52.webp";
+import gNew2 from "@/imports/d01a9115c13d5bf6677652a6e001505d.webp";
+import gNew3 from "@/imports/Hero_Section.webp";
 
 interface Props { onNavigate: (page: Page) => void; initialView?: "main" | "detail"; initialSection?: string; }
 

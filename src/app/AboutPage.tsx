@@ -1,13 +1,13 @@
-import image_About_us_3_1 from '@/imports/About_us-3-1.JPG'
+import image_About_us_3_1 from '@/imports/About_us-3-1.webp'
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import mainImg     from "@/imports/HomePageTest2/ceb876732bfd8fcca9b7b275f4d75dc7b9bbfba9.png";
-import collage1    from "@/imports/HomePageTest2/c8fa7c3c4ff319ad9467365787c2806761d48ba3.png";
-import collage2    from "@/imports/HomePageTest2/840beff7b23fbd7ada94e7e21afb82c1c2895632.png";
-import collage3    from "@/imports/HomePageTest2/ed925e7b9deb5bcb5a613151266e1ffb1bf8956b.png";
-import missionImg  from "@/imports/HomePageTest2/59be390b3a075be5c5d5fb384b41edfba0b518ff.png";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
+import mainImg     from "@/imports/HomePageTest2/ceb876732bfd8fcca9b7b275f4d75dc7b9bbfba9.webp";
+import collage1    from "@/imports/HomePageTest2/c8fa7c3c4ff319ad9467365787c2806761d48ba3.webp";
+import collage2    from "@/imports/HomePageTest2/840beff7b23fbd7ada94e7e21afb82c1c2895632.webp";
+import collage3    from "@/imports/HomePageTest2/ed925e7b9deb5bcb5a613151266e1ffb1bf8956b.webp";
+import missionImg  from "@/imports/HomePageTest2/59be390b3a075be5c5d5fb384b41edfba0b518ff.webp";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
 interface Props {
   onNavigate: (page: Page) => void;

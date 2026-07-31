@@ -1,10 +1,10 @@
 import { useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import wiseQr from "@/imports/wise-qr.jpg";
-import wiseIcon from "@/imports/wise-icon.jpeg";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
+import wiseQr from "@/imports/wise-qr.webp";
+import wiseIcon from "@/imports/wise-icon.webp";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
 interface Props {
   onNavigate: (page: Page) => void;

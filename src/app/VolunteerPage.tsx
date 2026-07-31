@@ -1,8 +1,8 @@
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import heroImg    from "@/imports/HomePageTest2/2a3414d693c93e996199ac6511ece760e2e0550e.png";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
+import heroImg    from "@/imports/HomePageTest2/2a3414d693c93e996199ac6511ece760e2e0550e.webp";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
 interface Props { onNavigate: (page: Page) => void; }
 

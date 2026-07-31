@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { Page } from "../types";
-import logoImg from "@/imports/Frame_427319345-1.png";
+import logoImg from "@/imports/Frame_427319345-1.webp";
 
 interface ICECHeaderProps {
   onNavigate: (page: Page) => void;

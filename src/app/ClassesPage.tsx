@@ -1,11 +1,11 @@
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
-import heroImg     from "@/imports/Program.png";
-import danceImg    from "@/imports/Dance.JPEG";
-import songsImg    from "@/imports/Music.PNG";
-import hanfuImg    from "@/imports/HomePageTest2/840beff7b23fbd7ada94e7e21afb82c1c2895632.png";
-import imgLogoNobg from "@/imports/Frame_427319345.png";
-import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.png";
+import heroImg     from "@/imports/Program.webp";
+import danceImg    from "@/imports/Dance.webp";
+import songsImg    from "@/imports/Music.webp";
+import hanfuImg    from "@/imports/HomePageTest2/840beff7b23fbd7ada94e7e21afb82c1c2895632.webp";
+import imgLogoNobg from "@/imports/Frame_427319345.webp";
+import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
 interface Props {
   onNavigate: (page: Page) => void;
