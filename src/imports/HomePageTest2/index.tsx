@@ -62,7 +62,7 @@ function CalendarIcon() {
 function HeartIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d={svgPaths.p3ee62280} stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p3ee62280} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -70,11 +70,11 @@ function HeartIcon() {
 function GiftIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d="M20 12V22H4V12" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M22 7H2V12H22V7Z" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M12 22V7" stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p22b4c780} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d={svgPaths.p2fc89700} stroke="#E48D62" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M20 12V22H4V12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M22 7H2V12H22V7Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M12 22V7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p22b4c780} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p2fc89700} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -106,11 +106,11 @@ function HeroSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             Bringing people together through cultural heritage, shared experiences, and lifelong learning.
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-[18px]">
-            <button onClick={() => onNavigate("events")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Explore Events →</span>
+            <button onClick={() => onNavigate("events")} className="icec-blue-gradient-button flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer transition-colors">
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Explore Events →</span>
             </button>
-            <button onClick={() => document.getElementById("our-work")?.scrollIntoView({ behavior: "smooth" })} className="bg-[#fef2e5] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Our Programs →</span>
+            <button onClick={() => document.getElementById("our-work")?.scrollIntoView({ behavior: "smooth" })} className="icec-orange-gradient-button flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer transition-colors">
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Our Programs →</span>
             </button>
           </div>
         </div>
@@ -146,8 +146,8 @@ function AboutUsSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
             <p>Through scholarships, performances, exhibitions, and educational programs, we create opportunities for emerging artists to grow while making cultural experiences more accessible to everyone.</p>
             <p>Our mission is to nurture talent, celebrate cultural heritage, and inspire meaningful connections through the arts.</p>
           </div>
-          <button onClick={() => onNavigate?.("about")} className="bg-[#fef2e5] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer hover:bg-[#fde8d0] transition-colors">
-            <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Read our Story</span>
+          <button onClick={() => onNavigate?.("about")} className="icec-orange-gradient-button flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer transition-colors">
+            <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Read our Story</span>
           </button>
         </div>
 
@@ -300,8 +300,8 @@ function EventsSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
               </p>
               <EventMeta date="Apr, 2027" coming="Location Details Coming Soon" />
             </div>
-            <button onClick={() => onNavigate("flower-festival")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
+            <button onClick={() => onNavigate("flower-festival")} className="icec-blue-gradient-button flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] self-start cursor-pointer transition-colors">
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
             </button>
           </div>
           <div className="w-full lg:flex-1 h-[220px] sm:h-[300px] lg:h-[432px] rounded-[16px] overflow-hidden">
@@ -342,8 +342,8 @@ function GallerySection({ onNavigate }: { onNavigate: (page: Page) => void }) {
         </div>
       </div>
       <div className="flex justify-center mt-10 lg:mt-[72px]">
-        <button onClick={() => onNavigate("events-gallery")} className="bg-[#e5f4fb] flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-          <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">View More →</span>
+        <button onClick={() => onNavigate("events-gallery")} className="icec-blue-gradient-button flex h-[46px] lg:h-[50px] items-center px-5 rounded-[4px] cursor-pointer transition-colors">
+          <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View More →</span>
         </button>
       </div>
     </section>
@@ -377,13 +377,13 @@ function GetInvolvedSection({ onNavigate }: { onNavigate: (page: Page) => void }
                 <CalendarIcon />
                 <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Attend an Event</span>
               </button>
-              <button onClick={() => onNavigate("volunteer")} className="bg-[#e5f4fb] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
+              <button onClick={() => onNavigate("volunteer")} className="icec-blue-gradient-button flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer transition-colors text-white">
                 <HeartIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Volunteer</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Volunteer</span>
               </button>
-              <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer">
+              <button onClick={() => onNavigate("donate")} className="icec-orange-gradient-button flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer text-white">
                 <GiftIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">Donate</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Donate</span>
               </button>
             </div>
             <div className="flex items-center gap-4">

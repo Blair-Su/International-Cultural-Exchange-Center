@@ -325,11 +325,11 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
           </div>
 
           <div className="relative z-10 flex flex-wrap justify-center gap-3">
-            <button onClick={() => onNavigate("donate")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 bg-[#e5f4fb] rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[16px] whitespace-nowrap">Donate for Us</span>
+            <button onClick={() => onNavigate("donate")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-blue-gradient-button rounded-[4px] cursor-pointer transition-colors">
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Donate for Us</span>
             </button>
-            <button onClick={() => onNavigate("contact")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 bg-[#fef2e5] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[16px] whitespace-nowrap">Contact Our Team</span>
+            <button onClick={() => onNavigate("contact")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors">
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Contact Our Team</span>
             </button>
           </div>
         </div>

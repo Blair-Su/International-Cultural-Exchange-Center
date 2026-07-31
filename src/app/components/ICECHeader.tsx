@@ -206,8 +206,8 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                   </button>
                 )
               )}
-              <div onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex h-[38px] items-center justify-center px-[14px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
-                <span className="font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] text-[#E48D62] leading-[1.2]">
+              <div onClick={() => onNavigate("donate")} className="icec-orange-gradient-button flex h-[38px] items-center justify-center px-[14px] rounded-[4px] cursor-pointer transition-colors shrink-0">
+                <span className="font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] text-white leading-[1.2]">
                   Donate
                 </span>
               </div>
@@ -275,9 +275,9 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
               )}
               <div
                 onClick={() => { onNavigate("donate"); close(); }}
-                className="mt-3 mb-4 bg-[#fef2e5] flex h-[46px] items-center justify-center rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors"
+                className="mt-3 mb-4 icec-orange-gradient-button flex h-[46px] items-center justify-center rounded-[4px] cursor-pointer transition-colors"
               >
-                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-[#E48D62]">Donate</span>
+                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-white">Donate</span>
               </div>
             </div>
           </div>

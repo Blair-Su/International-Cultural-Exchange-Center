@@ -1,3 +1,19 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+.icec-blue-gradient-button {
+  background: linear-gradient(90deg, rgba(61, 176, 211, 0.6) 0%, #3eb0d1 32%, #3eb0d1 67%, rgba(62, 176, 209, 0.6) 100%);
+}
+
+.icec-blue-gradient-button:hover {
+  background: linear-gradient(90deg, rgba(61, 176, 211, 0.78) 0%, #35a6c8 32%, #35a6c8 67%, rgba(62, 176, 209, 0.78) 100%);
+}
+
+.icec-orange-gradient-button {
+  background: linear-gradient(90deg, rgba(226, 142, 98, 0.6) 0%, #e28e62 32%, #e28e62 67%, rgba(226, 142, 98, 0.6) 100%);
+}
+
+.icec-orange-gradient-button:hover {
+  background: linear-gradient(90deg, rgba(226, 142, 98, 0.78) 0%, #d98255 32%, #d98255 67%, rgba(226, 142, 98, 0.78) 100%);
+}

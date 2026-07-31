@@ -300,35 +300,35 @@ function NextChapterSection({ onNavigate }: { onNavigate: (page: Page) => void }
           </div>
 
           <div className="relative z-10 flex flex-wrap gap-[15px] items-center justify-center">
-            {/* Explore Upcoming Events — teal outline */}
-            <button onClick={() => onNavigate("events")} className="flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] border-2 border-[#3DB0D3] cursor-pointer hover:bg-[#e5f4fb] transition-colors shrink-0">
+            {/* Explore Upcoming Events — teal filled */}
+            <button onClick={() => onNavigate("events")} className="icec-blue-gradient-button flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M16 2V6" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M8 2V6" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3 10H21" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M16 2V6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 2V6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 10H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Explore Upcoming Events</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Explore Upcoming Events</span>
             </button>
 
             {/* Partner With Us — teal filled */}
-            <button onClick={() => onNavigate("contact")} className="bg-[#e5f4fb] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#d0ecf8] transition-colors shrink-0">
+            <button onClick={() => onNavigate("contact")} className="icec-blue-gradient-button flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50903 2.99871 7.05 2.99871C5.59097 2.99871 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72719 21.351 5.12076 20.84 4.61Z" stroke="#3DB0D3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50903 2.99871 7.05 2.99871C5.59097 2.99871 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72719 21.351 5.12076 20.84 4.61Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Partner With Us</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Partner With Us</span>
             </button>
 
             {/* Donate — orange filled */}
-            <button onClick={() => onNavigate("donate")} className="bg-[#fef2e5] flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors shrink-0">
+            <button onClick={() => onNavigate("donate")} className="icec-orange-gradient-button flex gap-[8px] items-center justify-center px-[16px] py-[12px] rounded-[4px] cursor-pointer transition-colors shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M20 12V22H4V12" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M22 7H2V12H22V7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 22V7" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#E48D62" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 12V22H4V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 7H2V12H22V7Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 22V7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Donate</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">Donate</span>
             </button>
           </div>
         </div>

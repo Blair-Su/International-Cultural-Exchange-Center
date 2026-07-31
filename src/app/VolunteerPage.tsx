@@ -43,7 +43,7 @@ function IntroSection() {
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
               ICEC volunteers support cultural events, educational programs, and community activities. Whether helping behind the scenes or welcoming guests, every contribution helps create a better experience for the community.
             </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#E48D62] rounded-[4px] cursor-pointer hover:bg-[#D87B52] transition-colors no-underline self-start">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors no-underline self-start">
               <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Become a Volunteer →</span>
             </a>
           </div>
@@ -296,7 +296,7 @@ function CTASection() {
           </div>
 
           <div className="relative z-10">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 bg-[#E48D62] rounded-[4px] cursor-pointer hover:bg-[#D87B52] transition-colors no-underline">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors no-underline">
               <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Become a Volunteer →</span>
             </a>
           </div>

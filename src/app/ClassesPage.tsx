@@ -34,9 +34,9 @@ function ContactButton({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
     <button
       onClick={() => onNavigate("contact")}
-      className="inline-flex items-center h-[46px] lg:h-[50px] px-6 bg-[#fef2e5] rounded-[4px] cursor-pointer hover:bg-[#fde8d0] transition-colors self-start"
+      className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors self-start"
     >
-      <span className="font-['Inter:Medium',sans-serif] font-medium text-[#E48D62] text-[15px] lg:text-[18px] whitespace-nowrap">
+      <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">
         Contact for Details →
       </span>
     </button>
