@@ -326,10 +326,10 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
           <div className="relative z-10 flex flex-wrap justify-center gap-3">
             <button onClick={() => onNavigate("donate")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-blue-gradient-button rounded-[4px] cursor-pointer transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Donate for Us</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Donate for Us</span>
             </button>
             <button onClick={() => onNavigate("contact")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Contact Our Team</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Contact Our Team</span>
             </button>
           </div>
         </div>

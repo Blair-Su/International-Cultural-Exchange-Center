@@ -309,10 +309,10 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65] mb-8">Discover upcoming ICEC festivals, performances, workshops, and cultural programs.</p>
               <div className="flex flex-wrap gap-3">
                 <button onClick={() => document.getElementById("upcoming-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] transition-colors cursor-pointer">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Explore Upcoming Events</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Explore Upcoming Events</span>
                 </button>
                 <button onClick={() => document.getElementById("past-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-blue-gradient-button rounded-[4px] transition-colors cursor-pointer">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">View Past Events</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View Past Events</span>
                 </button>
               </div>
             </div>
@@ -343,7 +343,7 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
                 </div>
                 <button onClick={onViewFlowerFestival}
                   className="inline-flex items-center gap-2 h-[46px] px-6 icec-blue-gradient-button rounded-[4px] transition-colors cursor-pointer self-start">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] whitespace-nowrap">View Details →</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
                 </button>
               </div>
               {/* Poster */}

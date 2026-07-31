@@ -297,7 +297,7 @@ function CTASection() {
 
           <div className="relative z-10">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors no-underline">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[16px] whitespace-nowrap">Become a Volunteer →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Become a Volunteer →</span>
             </a>
           </div>
         </div>
