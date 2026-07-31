@@ -96,7 +96,7 @@ export default function DonatePage({ onNavigate }: Props) {
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[88px] items-start">
               <div className="pt-2">
-                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">
+                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#3DB0D3] tracking-[-0.32px] leading-[1.45] mb-2">
                   Support ICEC
                 </p>
                 <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">

@@ -95,7 +95,7 @@ export default function ContactPage({ onNavigate }: Props) {
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[88px] items-start">
               <div className="pt-2">
-                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">Contact ICEC</p>
+                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#3DB0D3] tracking-[-0.32px] leading-[1.45] mb-2">Contact ICEC</p>
                 <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">{"Let's Connect"}</h1>
                 <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.65)] leading-[1.65] max-w-[560px]">
                   Reach us directly for questions, partnerships, events, and community programs.
