@@ -51,10 +51,10 @@ function PinIcon() {
 function CalendarIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
-      <path d={svgPaths.p32f12c00} stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M16 2V6" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M8 2V6" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M3 10H21" stroke="#3DB0D3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d={svgPaths.p32f12c00} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M16 2V6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M8 2V6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M3 10H21" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   );
 }
@@ -373,9 +373,9 @@ function GetInvolvedSection({ onNavigate }: { onNavigate: (page: Page) => void }
           </div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap gap-3">
-              <button onClick={() => onNavigate("events")} className="flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] border-2 border-[#3DB0D3] cursor-pointer hover:bg-[#e5f4fb] transition-colors">
+              <button onClick={() => onNavigate("events")} className="icec-blue-gradient-button flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer transition-colors text-white">
                 <CalendarIcon />
-                <span className="font-['Inter:Medium',sans-serif] font-medium text-[#3DB0D3] text-[15px] lg:text-[18px] whitespace-nowrap">Attend an Event</span>
+                <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Attend an Event</span>
               </button>
               <button onClick={() => onNavigate("volunteer")} className="icec-blue-gradient-button flex gap-2 items-center justify-center px-4 py-3 rounded-[4px] cursor-pointer transition-colors text-white">
                 <HeartIcon />
