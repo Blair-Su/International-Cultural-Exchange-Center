@@ -155,21 +155,21 @@ function AboutUsSection({ onNavigate }: { onNavigate?: (page: Page) => void }) {
         <div className="w-full lg:flex-1 lg:min-w-0">
           {/* Desktop */}
           <div className="hidden lg:block relative w-full h-[580px]">
-            <div className="absolute top-0 left-0 w-[60.3%] h-[420px] overflow-hidden">
+            <div className="absolute top-0 left-0 w-[60.3%] h-[420px] overflow-hidden rounded-[12px]">
               <img src={imgCollageImage1} alt="" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute top-[90px] left-[64.7%] w-[35.3%] h-[280px] overflow-hidden">
+            <div className="absolute top-[90px] left-[64.7%] w-[35.3%] h-[280px] overflow-hidden rounded-[12px]">
               <img src={imgCollageImage2} alt="" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute top-[450px] left-0 w-full h-[130px] overflow-hidden">
+            <div className="absolute top-[450px] left-0 w-full h-[130px] overflow-hidden rounded-[12px]">
               <img src={imgCollageImage3} alt="" className="w-full h-full object-cover" />
             </div>
           </div>
           {/* Mobile / iPad */}
           <div className="lg:hidden grid grid-cols-2 gap-3">
-            <img src={imgCollageImage1} alt="" className="w-full h-[180px] sm:h-[220px] object-cover rounded-[8px]" />
-            <img src={imgCollageImage2} alt="" className="w-full h-[180px] sm:h-[220px] object-cover rounded-[8px]" />
-            <img src={imgCollageImage3} alt="" className="col-span-2 w-full h-[120px] sm:h-[140px] object-cover rounded-[8px]" />
+            <img src={imgCollageImage1} alt="" className="w-full h-[180px] sm:h-[220px] object-cover rounded-[12px]" />
+            <img src={imgCollageImage2} alt="" className="w-full h-[180px] sm:h-[220px] object-cover rounded-[12px]" />
+            <img src={imgCollageImage3} alt="" className="col-span-2 w-full h-[120px] sm:h-[140px] object-cover rounded-[12px]" />
           </div>
         </div>
         </div>
