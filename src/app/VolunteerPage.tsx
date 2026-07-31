@@ -345,7 +345,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
                   else if (l === "Volunteer") onNavigate("volunteer");
                   else if (l === "Donate") onNavigate("donate");
                 }}
-                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#2563EB] transition-colors">
+                className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#3DB0D3] transition-colors">
                 {l}
               </p>
             ))}
