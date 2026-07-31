@@ -15,7 +15,7 @@ const NAV_LINKS: Array<{ label: string; page?: Page; children?: string[] }> = [
   { label: "Contact", page: "contact" },
 ];
 
-const LANGUAGES = ["English", "简体中文", "繁体中文"];
+const LANGUAGES = ["English", "简体中文", "繁體中文"];
 
 function GlobeIcon() {
   return (
