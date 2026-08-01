@@ -13,7 +13,7 @@ interface Props { onNavigate: (page: Page) => void; }
 function HeroSection() {
   return (
     <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[520px] overflow-hidden">
-      <img src={heroImg} alt="ICEC Art Foundation" className="absolute inset-0 w-full h-full object-cover object-top" />
+      <img src={heroImg} alt="ICEC Art Foundation" className="absolute inset-0 w-full h-full object-cover object-[center_18%]" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">

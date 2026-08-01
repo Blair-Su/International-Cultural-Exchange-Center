@@ -305,7 +305,7 @@ function EventsSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             </button>
           </div>
           <div className="w-full lg:flex-1 h-[220px] sm:h-[300px] lg:h-[432px] rounded-[16px] overflow-hidden">
-            <img src={imgImage3} alt="Flower Festival" className="w-full h-full object-cover" />
+            <img src={imgImage3} alt="Flower Festival" className="w-full h-full object-cover object-[42%_center]" />
           </div>
         </div>
       </div>
