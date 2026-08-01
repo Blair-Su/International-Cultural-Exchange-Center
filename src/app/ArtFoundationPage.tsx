@@ -33,7 +33,7 @@ function MissionSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="max-w-[760px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
             Mission
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 mb-6 lg:mb-8">
@@ -100,7 +100,7 @@ function AwardCategoriesSection() {
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[56px]">
-          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
+          <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
             Award Categories
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 max-w-[680px] mx-auto">
