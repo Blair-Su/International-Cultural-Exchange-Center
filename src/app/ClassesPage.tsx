@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
+import { ICECFooter } from "./components/ICECFooter";
+import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "./siteLanguage";
 import heroImg     from "@/imports/Program.webp";
 import danceImg    from "@/imports/Dance.webp";
 import songsImg    from "@/imports/Music.webp";
@@ -11,18 +14,34 @@ interface Props {
   onNavigate: (page: Page) => void;
 }
 
+function useSiteLanguage() {
+  const [language, setLanguage] = useState<SiteLanguage>(getStoredLanguage);
+
+  useEffect(() => {
+    const onLanguageChange = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<SiteLanguage>).detail;
+      if (nextLanguage) setLanguage(nextLanguage);
+    };
+
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+  }, []);
+
+  return language;
+}
+
 // ── Hero ─────────────────────────────────────────────────────────
-function HeroSection() {
+function HeroSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[480px] overflow-hidden">
       <img src={heroImg} alt="ICEC Cultural Classes" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
-          Programs
+          {isSimplified ? "体验项目" : "Programs"}
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
-          Cultural Classes
+          {isSimplified ? "文化课程" : "Cultural Classes"}
         </h1>
       </div>
     </div>
@@ -30,21 +49,21 @@ function HeroSection() {
 }
 
 // ── Shared contact button ─────────────────────────────────────────
-function ContactButton({ onNavigate }: { onNavigate: (page: Page) => void }) {
+function ContactButton({ onNavigate, isSimplified }: { onNavigate: (page: Page) => void; isSimplified: boolean }) {
   return (
     <button
       onClick={() => onNavigate("contact")}
       className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors self-start"
     >
       <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">
-        Contact for Details →
+        {isSimplified ? "咨询详情" : "Contact for Details"} →
       </span>
     </button>
   );
 }
 
 // ── Overview ─────────────────────────────────────────────────────
-function OverviewSection() {
+function OverviewSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -54,14 +73,26 @@ function OverviewSection() {
           <div className="flex flex-col gap-8 w-full lg:flex-1">
             <div>
               <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-                Cultural Classes
+                {isSimplified ? "参与课程" : "Cultural Classes"}
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
-                Immerse Yourself in Culture
+                {isSimplified ? "从一次体验开始，走近文化。" : "Immerse Yourself in Culture"}
               </h2>
             </div>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.6]">
-              Immerse yourself in a vibrant cultural journey at the International Cultural Exchange Center (ICEC)! Discover our diverse offerings including dance classes, traditional Chinese songs, Hanfu attire, Hanfu Knowledge Dissemination, and runway shows. Our programs are crafted to offer enriching educational experiences, develop new skills, foster an appreciation for cultural heritage, and connect you with our vibrant community.
+              {isSimplified ? (
+                <>
+                  文化，<br />
+                  可以听见。<br />
+                  可以看见。<br />
+                  也可以亲身体验。<br />
+                  从传统舞蹈、古风歌曲，到汉服文化与礼仪课程，<br />
+                  邀请不同年龄、不同文化背景的人们，<br />
+                  一起学习、分享，理解。
+                </>
+              ) : (
+                "Immerse yourself in a vibrant cultural journey at the International Cultural Exchange Center (ICEC)! Discover our diverse offerings including dance classes, traditional Chinese songs, Hanfu attire, Hanfu Knowledge Dissemination, and runway shows. Our programs are crafted to offer enriching educational experiences, develop new skills, foster an appreciation for cultural heritage, and connect you with our vibrant community."
+              )}
             </p>
           </div>
 
@@ -83,9 +114,10 @@ interface ClassCardProps {
   imgAlt: string;
   reverse?: boolean;
   onNavigate: (page: Page) => void;
+  isSimplified: boolean;
 }
 
-function ClassCard({ eyebrow, title, body, img, imgAlt, reverse, onNavigate }: ClassCardProps) {
+function ClassCard({ eyebrow, title, body, img, imgAlt, reverse, onNavigate, isSimplified }: ClassCardProps) {
   return (
     <div className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-8 lg:gap-[72px] py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.08)]`}>
       {/* Text */}
@@ -101,7 +133,7 @@ function ClassCard({ eyebrow, title, body, img, imgAlt, reverse, onNavigate }: C
         <div className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
           {body}
         </div>
-        <ContactButton onNavigate={onNavigate} />
+        <ContactButton onNavigate={onNavigate} isSimplified={isSimplified} />
       </div>
 
       {/* Image */}
@@ -113,58 +145,96 @@ function ClassCard({ eyebrow, title, body, img, imgAlt, reverse, onNavigate }: C
 }
 
 // ── Classes ──────────────────────────────────────────────────────
-function ClassesSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
+function ClassesSection({ onNavigate, isSimplified }: { onNavigate: (page: Page) => void; isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
 
         <ClassCard
-          eyebrow="Dance"
-          title="Dance Class"
+          eyebrow={isSimplified ? "从舞蹈认识文化" : "Dance"}
+          title={isSimplified ? "民族舞课程" : "Dance Class"}
           img={danceImg}
           imgAlt="Dance class"
           onNavigate={onNavigate}
+          isSimplified={isSimplified}
           body={
-            <p>
-              Discover the joy of movement and the beauty of traditional dance with our classes. Experience the rich tapestry of Chinese dance, blending historical and contemporary techniques. Perfect for all skill levels, our classes offer a fun and fitness-filled journey through this vibrant art form!
-            </p>
+            isSimplified ? (
+              <p>
+                舞蹈，<br />
+                也是一种文化语言。<br />
+                从传统到当代，<br />
+                在身体的律动中感受文化，<br />
+                在学习与交流中发现更多可能。<br />
+                无论是否拥有舞蹈基础，<br />
+                都欢迎从这里开始。
+              </p>
+            ) : (
+              <p>
+                Discover the joy of movement and the beauty of traditional dance with our classes. Experience the rich tapestry of Chinese dance, blending historical and contemporary techniques. Perfect for all skill levels, our classes offer a fun and fitness-filled journey through this vibrant art form!
+              </p>
+            )
           }
         />
 
         <ClassCard
-          eyebrow="Music"
-          title="Traditional Chinese Songs Class"
+          eyebrow={isSimplified ? "从音乐认识文化" : "Music"}
+          title={isSimplified ? "古风声乐课程" : "Traditional Chinese Songs Class"}
           img={songsImg}
           imgAlt="Traditional Chinese songs class"
           reverse
           onNavigate={onNavigate}
+          isSimplified={isSimplified}
           body={
-            <p>
-              Immerse yourself in the melodious world of traditional Chinese songs. Learn to sing timeless classics while exploring the stories and emotions behind each piece. This class offers a delightful way to connect with Chinese culture through the power of music.
-            </p>
+            isSimplified ? (
+              <p>
+                歌声，<br />
+                承载着文化，<br />
+                也记录着时代。<br />
+                通过学习经典歌曲，<br />
+                走近作品背后的故事、情感与文化意蕴。<br />
+                让旋律成为交流的语言，<br />
+                也让文化在歌声中继续传唱。
+              </p>
+            ) : (
+              <p>
+                Immerse yourself in the melodious world of traditional Chinese songs. Learn to sing timeless classics while exploring the stories and emotions behind each piece. This class offers a delightful way to connect with Chinese culture through the power of music.
+              </p>
+            )
           }
         />
 
         <ClassCard
-          eyebrow="Hanfu"
-          title="Hanfu Class"
+          eyebrow={isSimplified ? "从服饰认识文化" : "Hanfu"}
+          title={isSimplified ? "汉服课程" : "Hanfu Class"}
           img={hanfuImg}
           imgAlt="Hanfu class"
           onNavigate={onNavigate}
+          isSimplified={isSimplified}
           body={
-            <>
-              <p className="mb-4">
-                Step into the elegance of Hanfu, the traditional clothing of the Han Chinese. In this class, you'll explore its historical significance, cultural symbolism, and proper wearing techniques. Embrace the beauty of ancient fashion with:
+            isSimplified ? (
+              <p>
+                一袭衣裳，<br />
+                承载着千年的文化。<br />
+                从历史、形制到礼仪，<br />
+                了解汉服背后的文化内涵，<br />
+                学习正确的穿着方式，<br />
+                感受传统服饰之美。
               </p>
-              <ul className="flex flex-col gap-2">
-                {["Hanfu Knowledge Dissemination", "Runway Shows"].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="w-[6px] h-[6px] rounded-full bg-[#E48D62] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </>
+            ) : (
+              <>
+                <p className="mb-4">
+                  Step into the elegance of Hanfu, the traditional clothing of the Han Chinese. In this class, you'll explore its historical significance, cultural symbolism, and proper wearing techniques. Embrace the beauty of ancient fashion with:
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {["Hanfu Knowledge Dissemination", "Runway Shows"].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span className="w-[6px] h-[6px] rounded-full bg-[#E48D62] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )
           }
         />
 
@@ -253,14 +323,17 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
 // ── Page ─────────────────────────────────────────────────────────
 export default function ClassesPage({ onNavigate }: Props) {
+  const language = useSiteLanguage();
+  const isSimplified = language === "简体中文";
+
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
       <ICECHeader onNavigate={onNavigate} activePage="classes" />
       <div className="flex flex-col w-full overflow-x-hidden">
-        <HeroSection />
-        <OverviewSection />
-        <ClassesSection onNavigate={onNavigate} />
-        <FooterSection onNavigate={onNavigate} />
+        <HeroSection isSimplified={isSimplified} />
+        <OverviewSection isSimplified={isSimplified} />
+        <ClassesSection onNavigate={onNavigate} isSimplified={isSimplified} />
+        <ICECFooter onNavigate={onNavigate} />
       </div>
     </div>
   );

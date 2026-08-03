@@ -1,23 +1,42 @@
+import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
+import { ICECFooter } from "./components/ICECFooter";
+import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "./siteLanguage";
 import heroImg    from "@/imports/HomePageTest2/2a3414d693c93e996199ac6511ece760e2e0550e.webp";
 import imgLogoNobg from "@/imports/Frame_427319345.webp";
 import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268183d390c4.webp";
 
 interface Props { onNavigate: (page: Page) => void; }
 
+function useSiteLanguage() {
+  const [language, setLanguage] = useState<SiteLanguage>(getStoredLanguage);
+
+  useEffect(() => {
+    const onLanguageChange = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<SiteLanguage>).detail;
+      if (nextLanguage) setLanguage(nextLanguage);
+    };
+
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+  }, []);
+
+  return language;
+}
+
 // ── Hero ──────────────────────────────────────────────────────────
-function HeroSection() {
+function HeroSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[480px] overflow-hidden">
       <img src={heroImg} alt="Volunteer with ICEC" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
-          Get Involved
+          {isSimplified ? "志愿服务" : "Get Involved"}
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
-          Volunteer
+          {isSimplified ? "成为 ICEC 志愿者" : "Volunteer"}
         </h1>
       </div>
     </div>
@@ -25,7 +44,7 @@ function HeroSection() {
 }
 
 // ── Intro ─────────────────────────────────────────────────────────
-function IntroSection() {
+function IntroSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -34,17 +53,26 @@ function IntroSection() {
           <div className="flex flex-col gap-8 w-full lg:flex-1">
             <div>
               <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-                Volunteer with ICEC
+                {isSimplified ? "成为ICEC志愿者" : "Volunteer with ICEC"}
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
-                Make a Difference Through Culture
+                {isSimplified ? "因为参与，让文化拥有更多可能。" : "Make a Difference Through Culture"}
               </h2>
             </div>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
-              ICEC volunteers support cultural events, educational programs, and community activities. Whether helping behind the scenes or welcoming guests, every contribution helps create a better experience for the community.
+              {isSimplified ? (
+                <>
+                  ICEC 志愿者参与文化活动、教育课程与社区项目。<br />
+                  无论负责活动筹备、现场协助，还是迎接每一位到来的朋友，<br />
+                  每一次参与，<br />
+                  都让更多相遇成为可能。
+                </>
+              ) : (
+                "ICEC volunteers support cultural events, educational programs, and community activities. Whether helping behind the scenes or welcoming guests, every contribution helps create a better experience for the community."
+              )}
             </p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors no-underline self-start">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Become a Volunteer →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "成为ICEC志愿者" : "Become a Volunteer"} →</span>
             </a>
           </div>
 
@@ -57,10 +85,19 @@ function IntroSection() {
               </svg>
             </div>
             <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">
-              Every Volunteer Contribution Is Recognized
+              {isSimplified ? "每一份付出，都值得感谢。" : "Every Volunteer Contribution Is Recognized"}
             </h3>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6]">
-              Volunteers who complete their service will receive an official ICEC Certificate of Appreciation.
+              {isSimplified ? (
+                <>
+                  完成志愿服务后，<br />
+                  你将获得 ICEC 志愿服务感谢证书。<br />
+                  感谢你的参与，<br />
+                  也感谢你让更多相遇成为可能。
+                </>
+              ) : (
+                "Volunteers who complete their service will receive an official ICEC Certificate of Appreciation."
+              )}
             </p>
           </div>
 
@@ -119,20 +156,39 @@ const ROLES = [
   },
 ];
 
-function RolesSection() {
+function RolesSection({ isSimplified }: { isSimplified: boolean }) {
+  const roles = isSimplified
+    ? ROLES.map((role, index) => {
+        const translated = [
+          { title: "活动支持", desc: "协助活动筹备、现场签到、来宾引导及现场执行。" },
+          { title: "课程支持", desc: "协助文化课程、工作坊及各类文化体验活动。" },
+          { title: "影像与传播", desc: "活动摄影、影像记录、社交媒体内容及活动宣传。" },
+          { title: "社区交流", desc: "协助社区沟通、语言支持及活动参与者服务。" },
+        ][index];
+        return { ...role, ...translated };
+      })
+    : ROLES;
+
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[56px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
-            Volunteer Roles
+            {isSimplified ? "志愿岗位" : "Volunteer Roles"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1">
-            Find Your Place in the Team
+            {isSimplified ? "找到属于你的位置" : "Find Your Place in the Team"}
           </h2>
+          {isSimplified && (
+            <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.55)] leading-[1.65] mt-3 max-w-[520px] mx-auto">
+              每个人都可以用自己的方式参与。<br />
+              无论你的专长是什么，<br />
+              这里都有属于你的位置。
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
-          {ROLES.map(({ color, icon, title, desc }) => (
+          {roles.map(({ color, icon, title, desc }) => (
             <div key={title} className="bg-white rounded-[16px] p-7 lg:p-8 border border-[rgba(0,0,0,0.08)] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.04)] flex gap-5">
               <div className="w-[52px] h-[52px] rounded-[12px] flex items-center justify-center shrink-0" style={{ backgroundColor: `${color}18`, color }}>
                 {icon}
@@ -192,7 +248,11 @@ const GAINS = [
   },
 ];
 
-function GainsSection() {
+function GainsSection({ isSimplified }: { isSimplified: boolean }) {
+  const gains = isSimplified
+    ? GAINS.map((gain, index) => ({ ...gain, label: ["实践经验", "社区连接", "新技能", "ICEC 志愿服务感谢证书"][index] }))
+    : GAINS;
+
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -200,18 +260,25 @@ function GainsSection() {
 
           <div className="flex flex-col gap-4 w-full lg:w-[400px] lg:shrink-0">
             <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-              Benefits
+              {isSimplified ? "收获" : "Benefits"}
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25]">
-              What You'll Gain
+              {isSimplified ? "成为 ICEC 志愿者，" : "What You'll Gain"}
             </h2>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.6)] leading-[1.65]">
-              Volunteering with ICEC is more than giving back — it's an opportunity to grow, connect, and be recognized for your contribution.
+              {isSimplified ? (
+                <>
+                  不仅是一次参与的经历，<br />
+                  更是一次学习、交流与成长的机会。
+                </>
+              ) : (
+                "Volunteering with ICEC is more than giving back — it's an opportunity to grow, connect, and be recognized for your contribution."
+              )}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 w-full">
-            {GAINS.map(({ icon, label }) => (
+            {gains.map(({ icon, label }) => (
               <div key={label} className="flex items-center gap-4 bg-white rounded-[12px] px-5 py-5 border border-[rgba(0,0,0,0.08)]">
                 <div className="w-[44px] h-[44px] rounded-[10px] bg-[#f8f7f5] flex items-center justify-center shrink-0">
                   {icon}
@@ -230,7 +297,7 @@ function GainsSection() {
 }
 
 // ── CTA ───────────────────────────────────────────────────────────
-function CTASection() {
+function CTASection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -285,19 +352,28 @@ function CTASection() {
 
           <div className="relative z-10 flex flex-col gap-4 max-w-[620px] items-center">
             <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#3DB0D3] tracking-[-0.36px]">
-              Join Us
+              {isSimplified ? "与我们一起" : "Join Us"}
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[26px] sm:text-[34px] lg:text-[44px] text-black tracking-[-0.88px] leading-[1.2]">
-              Help Bring Culture to Life
+              {isSimplified ? "让文化，因参与而鲜活。" : "Help Bring Culture to Life"}
             </h2>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.6)] leading-[1.65] max-w-[500px]">
-              We are always building our volunteer community. Submit your information, and we'll contact you when new opportunities become available.
+              {isSimplified ? (
+                <>
+                  ICEC 始终欢迎新的志愿者加入。<br />
+                  留下你的联系方式，<br />
+                  当有新的志愿服务机会时，<br />
+                  我们将第一时间与你联系。
+                </>
+              ) : (
+                "We are always building our volunteer community. Submit your information, and we'll contact you when new opportunities become available."
+              )}
             </p>
           </div>
 
           <div className="relative z-10">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfduDKnOHLXdfV_VVy8cejBnmY4k6OsRcpJMUXhUqe96HMDOg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center h-[46px] lg:h-[52px] px-8 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors no-underline">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Become a Volunteer →</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "成为志愿者" : "Become a Volunteer"} →</span>
             </a>
           </div>
         </div>
@@ -387,16 +463,19 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
 // ── Page ──────────────────────────────────────────────────────────
 export default function VolunteerPage({ onNavigate }: Props) {
+  const language = useSiteLanguage();
+  const isSimplified = language === "简体中文";
+
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
       <ICECHeader onNavigate={onNavigate} activePage="volunteer" />
       <div className="flex flex-col w-full overflow-x-hidden">
-        <HeroSection />
-        <IntroSection />
-        <RolesSection />
-        <GainsSection />
-        <CTASection />
-        <FooterSection onNavigate={onNavigate} />
+        <HeroSection isSimplified={isSimplified} />
+        <IntroSection isSimplified={isSimplified} />
+        <RolesSection isSimplified={isSimplified} />
+        <GainsSection isSimplified={isSimplified} />
+        <CTASection isSimplified={isSimplified} />
+        <ICECFooter onNavigate={onNavigate} />
       </div>
     </div>
   );

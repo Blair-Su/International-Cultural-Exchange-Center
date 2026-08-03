@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
+import { ICECFooter } from "./components/ICECFooter";
+import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "./siteLanguage";
 import wiseQr from "@/imports/wise-qr.webp";
 import wiseIcon from "@/imports/wise-icon.webp";
 import imgLogoNobg from "@/imports/Frame_427319345.webp";
@@ -8,6 +10,22 @@ import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268
 
 interface Props {
   onNavigate: (page: Page) => void;
+}
+
+function useSiteLanguage() {
+  const [language, setLanguage] = useState<SiteLanguage>(getStoredLanguage);
+
+  useEffect(() => {
+    const onLanguageChange = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<SiteLanguage>).detail;
+      if (nextLanguage) setLanguage(nextLanguage);
+    };
+
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+  }, []);
+
+  return language;
 }
 
 const PAYMENT_ID = "@internationalculturalexchangecenterinc";
@@ -80,6 +98,8 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
 export default function DonatePage({ onNavigate }: Props) {
   const [copied, setCopied] = useState(false);
+  const language = useSiteLanguage();
+  const isSimplified = language === "简体中文";
 
   const copyPaymentId = async () => {
     await navigator.clipboard?.writeText(PAYMENT_ID);
@@ -97,13 +117,22 @@ export default function DonatePage({ onNavigate }: Props) {
             <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[88px] items-start">
               <div className="pt-2">
                 <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
-                  Support ICEC
+                  {isSimplified ? "支持 ICEC" : "Support ICEC"}
                 </p>
                 <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">
-                  Make a Donation
+                  {isSimplified ? "让文化，因你我而生生不息。" : "Make a Donation"}
                 </h1>
                 <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.65)] leading-[1.65] max-w-[560px]">
-                  Your contribution helps ICEC support cultural programs, young artists, and community events.
+                  {isSimplified ? (
+                    <>
+                      你的每一份支持，<br />
+                      都帮助 ICEC 持续开展文化活动、支持青年艺术家，<br />
+                      并让更多人与文化相遇。<br />
+                      让文化，因你我而生生不息。
+                    </>
+                  ) : (
+                    "Your contribution helps ICEC support cultural programs, young artists, and community events."
+                  )}
                 </p>
               </div>
 
@@ -173,7 +202,7 @@ export default function DonatePage({ onNavigate }: Props) {
           </div>
         </section>
       </main>
-      <FooterSection onNavigate={onNavigate} />
+      <ICECFooter onNavigate={onNavigate} />
     </div>
   );
 }

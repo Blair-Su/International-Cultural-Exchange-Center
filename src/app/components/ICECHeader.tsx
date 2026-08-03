@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { Page } from "../types";
+import { LANGUAGES, type SiteLanguage, getStoredLanguage, setStoredLanguage } from "../siteLanguage";
 import logoImg from "@/imports/Frame_427319345-1.webp";
 
 interface ICECHeaderProps {
@@ -15,7 +16,20 @@ const NAV_LINKS: Array<{ label: string; page?: Page; children?: string[] }> = [
   { label: "Contact", page: "contact" },
 ];
 
-const LANGUAGES = ["English", "简体中文", "繁體中文"];
+const SIMPLIFIED_NAV_LINKS: Array<{ label: string; page?: Page; children?: string[] }> = [
+  { label: "首页", page: "home" },
+  { label: "关于", page: "about" },
+  { label: "体验项目", children: ["社区活动", "文化课程", "艺术基金"] },
+  { label: "志愿服务", page: "volunteer" },
+  { label: "联系我们", page: "contact" },
+];
+
+function getProgramPage(label: string): Page | undefined {
+  if (label === "Events" || label === "社区活动") return "events";
+  if (label === "Classes" || label === "文化课程") return "classes";
+  if (label === "Art Foundation" || label === "艺术基金") return "artfoundation";
+  return undefined;
+}
 
 function GlobeIcon() {
   return (
@@ -32,16 +46,27 @@ export function ICECTopBar() { return null; }
 export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
   const [open, setOpen] = useState(false);
   const [topBarVisible, setTopBarVisible] = useState(true);
-  const [lang, setLang] = useState("English");
+  const [lang, setLang] = useState<SiteLanguage>(getStoredLanguage);
   const [langOpen, setLangOpen] = useState(false);
   const [programsOpen, setProgramsOpen] = useState(false);
   const [mobilePrograms, setMobilePrograms] = useState(false);
   const langBtnRef = useRef<HTMLButtonElement>(null);
   const mobileLangBtnRef = useRef<HTMLButtonElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
   const programsBtnRef = useRef<HTMLDivElement>(null);
   const [dropdownPos, setDropdownPos] = useState<{ top: number; right: number } | null>(null);
 
   const close = () => { setOpen(false); setMobilePrograms(false); };
+  const isSimplified = lang === "简体中文";
+  const navLinks = isSimplified ? SIMPLIFIED_NAV_LINKS : NAV_LINKS;
+  const topBarText = isSimplified ? "花朝节 2027 · 四月" : "Flower Festival 2027 · Apr";
+  const donateLabel = isSimplified ? "支持我们" : "Donate";
+
+  const selectLanguage = (language: SiteLanguage) => {
+    setLang(language);
+    setStoredLanguage(language);
+    setLangOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => setTopBarVisible(window.scrollY < 10);
@@ -66,7 +91,8 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
     const handler = (e: MouseEvent) => {
       const target = e.target as Node;
       const clickedBtn = langBtnRef.current?.contains(target) || mobileLangBtnRef.current?.contains(target);
-      if (!clickedBtn) setLangOpen(false);
+      const clickedDropdown = langDropdownRef.current?.contains(target);
+      if (!clickedBtn && !clickedDropdown) setLangOpen(false);
     };
     const onScroll = () => setLangOpen(false);
     document.addEventListener("mousedown", handler);
@@ -80,13 +106,14 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
   // Fixed-position dropdown — renders outside any overflow:hidden ancestor
   const langDropdown = langOpen && dropdownPos ? (
     <div
+      ref={langDropdownRef}
       className="fixed bg-white rounded-[6px] shadow-xl overflow-hidden min-w-[120px]"
       style={{ top: dropdownPos.top, right: dropdownPos.right, zIndex: 9999 }}
     >
       {LANGUAGES.map((l) => (
         <button
           key={l}
-          onClick={() => { setLang(l); setLangOpen(false); }}
+          onClick={() => selectLanguage(l)}
           className={[
             "w-full text-left px-[14px] py-[9px] font-['Inter',sans-serif] font-medium text-[14px] leading-[1.2] transition-colors hover:bg-gray-50",
             l === lang ? "text-[#E48D62]" : "text-[#333]",
@@ -110,7 +137,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
             <div className="hidden sm:block w-[81px]" />
 
             <p className="font-['Inter',sans-serif] font-medium text-[13px] sm:text-[15px] text-white text-center leading-[1.2] truncate flex-1 sm:flex-none">
-              Flower Festival 2027 · Apr
+              {topBarText}
             </p>
 
             {/* Desktop language switcher */}
@@ -161,7 +188,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
             </button>
 
             <nav className="hidden lg:flex items-center gap-[18px] xl:gap-[22px]">
-              {NAV_LINKS.map(({ label, page, children }) =>
+              {navLinks.map(({ label, page, children }) =>
                 children ? (
                   <div
                     key={label}
@@ -182,7 +209,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                       <div className="absolute top-full left-0 pt-2 min-w-[160px]" style={{ zIndex: 200 }}>
                       <div className="bg-white rounded-[8px] shadow-lg overflow-hidden">
                         {children.map((sub) => {
-                          const subPage = sub === "Classes" ? "classes" as const : sub === "Art Foundation" ? "artfoundation" as const : sub === "Events" ? "events" as const : undefined;
+                          const subPage = getProgramPage(sub);
                           return (
                             <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); setProgramsOpen(false); } }} className="w-full text-left px-[16px] py-[10px] font-['Inter',sans-serif] font-medium text-[14px] text-[#333] hover:bg-gray-50 hover:text-black transition-colors whitespace-nowrap cursor-pointer">
                               {sub}
@@ -208,7 +235,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
               )}
               <div onClick={() => onNavigate("donate")} className="icec-orange-gradient-button flex h-[38px] items-center justify-center px-[14px] rounded-[4px] cursor-pointer transition-colors shrink-0">
                 <span className="font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] text-white leading-[1.2]">
-                  Donate
+                  {donateLabel}
                 </span>
               </div>
             </nav>
@@ -235,7 +262,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
         {open && (
           <div className="lg:hidden border-t border-black/10 bg-white/95 backdrop-blur-[15px]">
             <div className="px-4 sm:px-6 py-2 flex flex-col">
-              {NAV_LINKS.map(({ label, page, children }) =>
+              {navLinks.map(({ label, page, children }) =>
                 children ? (
                   <div key={label} className="border-b border-black/[0.06]">
                     <button
@@ -250,7 +277,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                     {mobilePrograms && (
                       <div className="flex flex-col pb-2 pl-4">
                         {children.map((sub) => {
-                          const subPage = sub === "Classes" ? "classes" as const : sub === "Art Foundation" ? "artfoundation" as const : sub === "Events" ? "events" as const : undefined;
+                          const subPage = getProgramPage(sub);
                           return (
                             <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); close(); } }} className="text-left font-['Inter',sans-serif] font-medium text-[15px] py-[10px] text-[rgba(50,50,50,0.7)] hover:text-black transition-colors cursor-pointer">
                               {sub}
@@ -277,7 +304,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                 onClick={() => { onNavigate("donate"); close(); }}
                 className="mt-3 mb-4 icec-orange-gradient-button flex h-[46px] items-center justify-center rounded-[4px] cursor-pointer transition-colors"
               >
-                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-white">Donate</span>
+                <span className="font-['Inter',sans-serif] font-medium text-[17px] text-white">{donateLabel}</span>
               </div>
             </div>
           </div>

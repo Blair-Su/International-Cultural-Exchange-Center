@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
+import { ICECFooter } from "./components/ICECFooter";
+import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "./siteLanguage";
 import eventsHeroImg from "@/imports/Events-1.webp";
 import flowerPosterImg from "@/imports/HomePageTest2/flower-festival-home-poster.webp";
 import imgLogoNobg from "@/imports/Frame_427319345.webp";
@@ -23,6 +25,22 @@ import gNew2 from "@/imports/d01a9115c13d5bf6677652a6e001505d.webp";
 import gNew3 from "@/imports/Hero_Section.webp";
 
 interface Props { onNavigate: (page: Page) => void; initialView?: "main" | "detail"; initialSection?: string; }
+
+function useSiteLanguage() {
+  const [language, setLanguage] = useState<SiteLanguage>(getStoredLanguage);
+
+  useEffect(() => {
+    const onLanguageChange = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<SiteLanguage>).detail;
+      if (nextLanguage) setLanguage(nextLanguage);
+    };
+
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+  }, []);
+
+  return language;
+}
 
 const SOCIAL_LINKS: Record<string, string> = {
   TikTok: "https://www.tiktok.com/@icec_nyc?is_from_webapp=1&sender_device=pc",
@@ -159,7 +177,7 @@ function PastEventsCarousel() {
 }
 
 // ── Flower Festival Detail ───────────────────────────────────────
-function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNavigate: (page: Page) => void }) {
+function FlowerFestivalDetail({ onBack, onNavigate, isSimplified }: { onBack: () => void; onNavigate: (page: Page) => void; isSimplified: boolean }) {
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
       <ICECHeader onNavigate={onNavigate} activePage="events" />
@@ -169,7 +187,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
         <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pt-8 w-full">
           <button onClick={onBack} className="flex items-center gap-2 text-[#3DB0D3] font-['Inter:Medium',sans-serif] font-medium text-[14px] hover:opacity-75 transition-opacity">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            Back to Events
+            {isSimplified ? "返回社区活动页面" : "Back to Events"}
           </button>
         </div>
 
@@ -181,9 +199,9 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
               {/* Left — info */}
               <div className="flex flex-col gap-8 w-full lg:flex-1">
                 <div>
-                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">Upcoming Event</p>
-                  <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[32px] sm:text-[44px] lg:text-[52px] text-black tracking-[-1.04px] leading-[1.15] mb-3">Flower Festival</h1>
-                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[16px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.6]">Celebrate spring through culture, creativity, and community.</p>
+                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] text-[#E48D62] tracking-[-0.32px] leading-[1.45] mb-2">{isSimplified ? "即将举行" : "Upcoming Event"}</p>
+                  <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[32px] sm:text-[44px] lg:text-[52px] text-black tracking-[-1.04px] leading-[1.15] mb-3">{isSimplified ? "花朝节" : "Flower Festival"}</h1>
+                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[16px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.6]">{isSimplified ? "因文化与创意相聚，一起迎接春天。" : "Celebrate spring through culture, creativity, and community."}</p>
                 </div>
 
                 {/* Info cards */}
@@ -196,7 +214,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                           <path d="M16 2v4M8 2v4M3 10h18" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
                         </svg>
                       ),
-                      label: "Date", value: "April 2027",
+                      label: isSimplified ? "日期" : "Date", value: isSimplified ? "2027年四月" : "April 2027",
                     },
                     {
                       icon: (
@@ -205,7 +223,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                           <circle cx="12" cy="9" r="2.5" stroke="#3DB0D3" strokeWidth="1.8"/>
                         </svg>
                       ),
-                      label: "Location", value: "Location to Be Announced",
+                      label: isSimplified ? "地点" : "Location", value: isSimplified ? "地点即将公布" : "Location to Be Announced",
                     },
                     {
                       icon: (
@@ -215,7 +233,7 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
                           <path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round"/>
                         </svg>
                       ),
-                      label: "Admission", value: "Free",
+                      label: isSimplified ? "入场" : "Admission", value: isSimplified ? "免费" : "Free",
                     },
                   ].map(({ icon, label, value }) => (
                     <div key={label} className="flex items-center gap-4 bg-white rounded-[12px] px-5 py-4 border border-[rgba(0,0,0,0.08)]">
@@ -232,22 +250,26 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
 
                 {/* About */}
                 <div>
-                  <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] lg:text-[24px] text-black tracking-[-0.48px] leading-[1.3] mb-3">About the Event</h2>
-                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.68)] leading-[1.65]">The ICEC Flower Festival brings together traditional Chinese arts, spring celebrations, cultural performances, and interactive community activities. Guests of all ages are invited to experience the beauty of seasonal traditions in a welcoming and engaging setting.</p>
+                  <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] lg:text-[24px] text-black tracking-[-0.48px] leading-[1.3] mb-3">{isSimplified ? "关于活动" : "About the Event"}</h2>
+                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
+                    {isSimplified ? "ICEC 花朝节汇聚传统中华艺术、春日庆典、文化演出与体验活动。欢迎不同年龄的朋友在友好而充满参与感的环境中，体验季节传统之美。" : "The ICEC Flower Festival brings together traditional Chinese arts, spring celebrations, cultural performances, and interactive community activities. Guests of all ages are invited to experience the beauty of seasonal traditions in a welcoming and engaging setting."}
+                  </p>
                 </div>
 
                 {/* Join */}
                 <div className="bg-white rounded-[16px] p-6 border border-[rgba(0,0,0,0.08)]">
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] mb-2">Join Us at the Flower Festival</h3>
-                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6] mb-5">Experience spring through traditional arts, performances, and community celebration. Registration, venue, and schedule details will be announced soon.</p>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] mb-2">{isSimplified ? "加入花朝节" : "Join Us at the Flower Festival"}</h3>
+                  <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6] mb-5">
+                    {isSimplified ? "在传统艺术与精彩表演中，一起感受春天。报名、场地与日程详情将很快公布。" : "Experience spring through traditional arts, performances, and community celebration. Registration, venue, and schedule details will be announced soon."}
+                  </p>
                   <div className="inline-flex items-center h-[44px] px-6 bg-[rgba(0,0,0,0.06)] rounded-[4px] cursor-default select-none">
-                    <span className="font-['Inter:Medium',sans-serif] font-medium text-[rgba(0,0,0,0.38)] text-[14px] lg:text-[15px] whitespace-nowrap">Registration Coming Soon</span>
+                    <span className="font-['Inter:Medium',sans-serif] font-medium text-[rgba(0,0,0,0.38)] text-[14px] lg:text-[15px] whitespace-nowrap">{isSimplified ? "报名即将开放" : "Registration Coming Soon"}</span>
                   </div>
                 </div>
 
                 {/* Share */}
                 <div>
-                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.5)] uppercase tracking-[0.6px] mb-3">Share this Event</p>
+                  <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.5)] uppercase tracking-[0.6px] mb-3">{isSimplified ? "分享此活动" : "Share this Event"}</p>
                   <div className="flex items-center gap-3">
                     <a href="https://www.facebook.com/share_channel/#" target="_blank" rel="noopener noreferrer"
                       className="w-[40px] h-[40px] rounded-full bg-white border border-[rgba(0,0,0,0.1)] flex items-center justify-center hover:border-[#1877f2] hover:bg-[#f0f4ff] transition-colors no-underline">
@@ -276,14 +298,14 @@ function FlowerFestivalDetail({ onBack, onNavigate }: { onBack: () => void; onNa
           </div>
         </section>
 
-        <FooterSection onNavigate={onNavigate} />
+        <ICECFooter onNavigate={onNavigate} />
       </div>
     </div>
   );
 }
 
 // ── Events Main Page ─────────────────────────────────────────────
-function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: Page) => void; onViewFlowerFestival: () => void }) {
+function EventsMain({ onNavigate, onViewFlowerFestival, isSimplified }: { onNavigate: (page: Page) => void; onViewFlowerFestival: () => void; isSimplified: boolean }) {
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
       <ICECHeader onNavigate={onNavigate} activePage="events" />
@@ -294,8 +316,8 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
           <img src={eventsHeroImg} alt="ICEC Events" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">Programs</p>
-            <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2]">Events</h1>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">{isSimplified ? "体验项目" : "Programs"}</p>
+            <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2]">{isSimplified ? "社区活动" : "Events"}</h1>
           </div>
         </div>
 
@@ -304,15 +326,31 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="max-w-[720px]">
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mb-4">
-                Experience Culture.<br />Connect Through Community.
+                {isSimplified ? (
+                  <>
+                    感受文化，链接社区<br />让文化走进社区。
+                  </>
+                ) : (
+                  <>
+                    Experience Culture.<br />Connect Through Community.
+                  </>
+                )}
               </h2>
-              <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65] mb-8">Discover upcoming ICEC festivals, performances, workshops, and cultural programs.</p>
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65] mb-8">
+                {isSimplified ? (
+                  <>
+                    在节庆、演出、展览与社区活动中，<br />遇见文化，也遇见彼此。
+                  </>
+                ) : (
+                  "Discover upcoming ICEC festivals, performances, workshops, and cultural programs."
+                )}
+              </p>
               <div className="flex flex-wrap gap-3">
                 <button onClick={() => document.getElementById("upcoming-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-orange-gradient-button rounded-[4px] transition-colors cursor-pointer">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Explore Upcoming Events</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "即将举行" : "Explore Upcoming Events"}</span>
                 </button>
                 <button onClick={() => document.getElementById("past-events")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center h-[46px] lg:h-[50px] px-6 icec-blue-gradient-button rounded-[4px] transition-colors cursor-pointer">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View Past Events</span>
+                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "往期活动" : "View Past Events"}</span>
                 </button>
               </div>
             </div>
@@ -322,29 +360,42 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
         {/* Upcoming Event */}
         <section id="upcoming-events" className="w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-1">Upcoming Event</h5>
-            <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">{"What's Coming Next"}</h2>
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45] mb-1">{isSimplified ? "即将举行" : "Upcoming Event"}</h5>
+            <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">{isSimplified ? "期待与你相遇" : "What's Coming Next"}</h2>
 
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[64px] bg-white rounded-[20px] p-6 lg:p-10 border border-[rgba(0,0,0,0.08)] shadow-[0px_4px_16px_0px_rgba(0,0,0,0.05)]">
               {/* Info */}
               <div className="flex flex-col gap-6 w-full lg:flex-1">
                 <div>
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[32px] text-black tracking-[-0.64px] leading-[1.2]">Flower Festival</h3>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[32px] text-black tracking-[-0.64px] leading-[1.2]">{isSimplified ? "花朝节" : "Flower Festival"}</h3>
+                  {isSimplified && (
+                    <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.68)] leading-[1.6] mt-3">
+                      通过中华传统艺术、表演与社区庆典迎接春天。欢迎大家加入这场适合各年龄段的沉浸式文化体验。
+                    </p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3 text-[rgba(0,0,0,0.6)]">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[15px]">April 2027</span>
+                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[15px]">{isSimplified ? "2027年四月" : "April 2027"}</span>
                   </div>
                   <div className="flex items-center gap-3 text-[rgba(0,0,0,0.6)]">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="1.8"/><circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.8"/></svg>
-                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[15px]">Location Details Coming Soon</span>
+                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[15px]">{isSimplified ? "地点详情即将公布" : "Location Details Coming Soon"}</span>
                   </div>
                 </div>
-                <button onClick={onViewFlowerFestival}
-                  className="inline-flex items-center gap-2 h-[46px] px-6 icec-blue-gradient-button rounded-[4px] transition-colors cursor-pointer self-start">
-                  <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">View Details →</span>
-                </button>
+                <div className="flex flex-wrap gap-3">
+                  <button onClick={onViewFlowerFestival}
+                    className="inline-flex items-center gap-2 h-[46px] px-6 icec-blue-gradient-button rounded-[4px] transition-colors cursor-pointer self-start">
+                    <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "查看详情" : "View Details"} →</span>
+                  </button>
+                  {isSimplified && (
+                    <button
+                      className="inline-flex items-center gap-2 h-[46px] px-6 bg-[rgba(0,0,0,0.06)] rounded-[4px] cursor-default self-start">
+                      <span className="font-['Inter:Medium',sans-serif] font-medium text-[rgba(0,0,0,0.38)] text-[15px] lg:text-[18px] whitespace-nowrap">立即报名</span>
+                    </button>
+                  )}
+                </div>
               </div>
               {/* Poster */}
               <div className="w-full lg:w-[300px] xl:w-[340px] lg:shrink-0 rounded-[12px] overflow-hidden shadow-[0px_4px_16px_0px_rgba(0,0,0,0.1)]">
@@ -357,13 +408,13 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
         {/* Past Events */}
         <section id="past-events" className="w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
-            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-1">Past Events</h5>
-            <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">Moments We've Shared</h2>
+            <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-1">{isSimplified ? "往期活动" : "Past Events"}</h5>
+            <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[32px] lg:text-[40px] text-black tracking-[-0.8px] leading-[1.25] mb-8">{isSimplified ? "相遇瞬间" : "Moments We've Shared"}</h2>
             <PastEventsCarousel />
           </div>
         </section>
 
-        <FooterSection onNavigate={onNavigate} />
+        <ICECFooter onNavigate={onNavigate} />
       </div>
     </div>
   );
@@ -372,6 +423,8 @@ function EventsMain({ onNavigate, onViewFlowerFestival }: { onNavigate: (page: P
 // ── Page entry — handles sub-view state ──────────────────────────
 export default function EventsPage({ onNavigate, initialView = "main", initialSection }: Props) {
   const [view, setView] = useState<"main" | "detail">(initialView);
+  const language = useSiteLanguage();
+  const isSimplified = language === "简体中文";
 
   useEffect(() => {
     if (initialSection) {
@@ -388,7 +441,7 @@ export default function EventsPage({ onNavigate, initialView = "main", initialSe
   }, [initialSection]);
 
   if (view === "detail") {
-    return <FlowerFestivalDetail onBack={() => setView("main")} onNavigate={onNavigate} />;
+    return <FlowerFestivalDetail onBack={() => setView("main")} onNavigate={onNavigate} isSimplified={isSimplified} />;
   }
-  return <EventsMain onNavigate={onNavigate} onViewFlowerFestival={() => setView("detail")} />;
+  return <EventsMain onNavigate={onNavigate} onViewFlowerFestival={() => setView("detail")} isSimplified={isSimplified} />;
 }

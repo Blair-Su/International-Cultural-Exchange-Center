@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
+import { ICECFooter } from "./components/ICECFooter";
+import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "./siteLanguage";
 import DanceIcon from "@/imports/Icon/index";
 import heroImg   from "@/imports/Art_Foundation___.webp";
 import juniorImg from "@/imports/Art_Foundation_Junior_1-1.webp";
@@ -9,18 +12,34 @@ import imgWeChatQr from "@/imports/HomePageTest2/3484b245a1dff2b03b62d31a87de268
 
 interface Props { onNavigate: (page: Page) => void; }
 
+function useSiteLanguage() {
+  const [language, setLanguage] = useState<SiteLanguage>(getStoredLanguage);
+
+  useEffect(() => {
+    const onLanguageChange = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<SiteLanguage>).detail;
+      if (nextLanguage) setLanguage(nextLanguage);
+    };
+
+    window.addEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+    return () => window.removeEventListener(LANGUAGE_CHANGE_EVENT, onLanguageChange);
+  }, []);
+
+  return language;
+}
+
 // ── Hero ──────────────────────────────────────────────────────────
-function HeroSection() {
+function HeroSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <div className="relative w-full h-[300px] sm:h-[380px] lg:h-[520px] overflow-hidden">
       <img src={heroImg} alt="ICEC Art Foundation" className="absolute inset-0 w-full h-full object-cover object-[center_18%]" />
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
-          Programs
+          {isSimplified ? "体验项目" : "Programs"}
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[60px] text-white tracking-[-1.28px] leading-[1.15] max-w-[700px]">
-          Art Foundation
+          {isSimplified ? "艺术基金" : "Art Foundation"}
         </h1>
       </div>
     </div>
@@ -28,19 +47,34 @@ function HeroSection() {
 }
 
 // ── Mission ───────────────────────────────────────────────────────
-function MissionSection() {
+function MissionSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="max-w-[760px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-            Mission
+            {isSimplified ? "我们的使命" : "Mission"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 mb-6 lg:mb-8">
-            Preserving tradition by investing in young artists.
+            {isSimplified ? (
+              <>
+                支持青年艺术家，<br />
+                支持真正有价值的文化创作。
+              </>
+            ) : (
+              "Preserving tradition by investing in young artists."
+            )}
           </h2>
           <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.65]">
-            The ICEC Art Foundation supports emerging artists who create and present work rooted in traditional Chinese culture. Through awards, funding, and public programs, we help cultural traditions reach new generations and broader audiences.
+            {isSimplified ? (
+              <>
+                通过奖项、资助与公共文化项目，<br />
+                让更多优秀作品被看见，<br />
+                让更多年轻人与文化相遇。
+              </>
+            ) : (
+              "The ICEC Art Foundation supports emerging artists who create and present work rooted in traditional Chinese culture. Through awards, funding, and public programs, we help cultural traditions reach new generations and broader audiences."
+            )}
           </p>
         </div>
       </div>
@@ -95,24 +129,45 @@ const AWARD_CATEGORIES = [
   },
 ];
 
-function AwardCategoriesSection() {
+function AwardCategoriesSection({ isSimplified }: { isSimplified: boolean }) {
+  const awardCategories = isSimplified
+    ? AWARD_CATEGORIES.map((category, index) => {
+        const translated = [
+          { category: "音乐", items: ["歌曲创作", "器乐演奏"] },
+          { category: "视觉艺术", items: ["国画", "摄影", "雕塑"] },
+          { category: "舞蹈", items: ["传统舞蹈", "原创编舞"] },
+          { category: "文学", items: ["诗歌", "散文", "小说", "戏剧"] },
+        ][index];
+        return { ...category, ...translated };
+      })
+    : AWARD_CATEGORIES;
+
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-10 lg:mb-[56px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
-            Award Categories
+            {isSimplified ? "奖项类别" : "Award Categories"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 max-w-[680px] mx-auto">
-            Celebrating Chinese Art Across Four Fields
+            {isSimplified ? "不同的艺术表达，共通的传统文化。" : "Celebrating Chinese Art Across Four Fields"}
           </h2>
           <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.55)] leading-[1.6] mt-3 max-w-[540px] mx-auto">
-            The foundation has established four major award categories to cover various fields of traditional Chinese-style art comprehensively.
+            {isSimplified ? (
+              <>
+                基金会设立四大奖项类别，<br />
+                支持音乐、视觉艺术、舞蹈与文学等不同领域的创作。<br />
+                艺术表达可以不同。<br />
+                文化始终相通。
+              </>
+            ) : (
+              "The foundation has established four major award categories to cover various fields of traditional Chinese-style art comprehensively."
+            )}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
-          {AWARD_CATEGORIES.map(({ icon, category, color, items }) => (
+          {awardCategories.map(({ icon, category, color, items }) => (
             <div key={category} className="bg-white rounded-[16px] p-7 lg:p-8 border border-[rgba(0,0,0,0.08)] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.04)] flex flex-col gap-5">
               <div className="flex items-center gap-4">
                 <div className="w-[52px] h-[52px] rounded-[12px] flex items-center justify-center shrink-0" style={{ backgroundColor: `${color}18`, color }}>
@@ -141,19 +196,26 @@ function AwardCategoriesSection() {
 }
 
 // ── Award Groups ──────────────────────────────────────────────────
-function AwardGroupSection() {
+function AwardGroupSection({ isSimplified }: { isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="mb-10 lg:mb-[56px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-            Award Group
+            {isSimplified ? "参赛组别" : "Award Group"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 max-w-[560px]">
-            Supporting artists at every stage
+            {isSimplified ? "支持不同年龄阶段的青年艺术家" : "Supporting artists at every stage"}
           </h2>
           <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.55)] leading-[1.6] mt-3 max-w-[500px]">
-            To better motivate and support young artists of different age groups, the foundation divides the awards into two groups.
+            {isSimplified ? (
+              <>
+                基金会设立两个参赛组别，<br />
+                为不同年龄阶段的青年艺术家提供展示与交流的平台。
+              </>
+            ) : (
+              "To better motivate and support young artists of different age groups, the foundation divides the awards into two groups."
+            )}
           </p>
         </div>
 
@@ -165,11 +227,11 @@ function AwardGroupSection() {
             </div>
             <div className="p-6 lg:p-7 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#fef2e5] text-[#E48D62]">Under 18</span>
-                <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">Junior</h3>
+                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#fef2e5] text-[#E48D62]">{isSimplified ? "未满18岁" : "Under 18"}</span>
+                <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">{isSimplified ? "青少年组" : "Junior"}</h3>
               </div>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6]">
-                For individuals under 18 years old.
+                {isSimplified ? "面向未满18岁的参赛者。" : "For individuals under 18 years old."}
               </p>
             </div>
           </div>
@@ -181,11 +243,11 @@ function AwardGroupSection() {
             </div>
             <div className="p-6 lg:p-7 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#e5f4fb] text-[#3DB0D3]">18 & above</span>
-                <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">Youth</h3>
+                <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-['Inter:Medium',sans-serif] font-medium bg-[#e5f4fb] text-[#3DB0D3]">{isSimplified ? "18岁以上" : "18 & above"}</span>
+                <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[24px] lg:text-[28px] text-black tracking-[-0.56px] leading-[1.2]">{isSimplified ? "青年组" : "Youth"}</h3>
               </div>
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.6)] leading-[1.6]">
-                For individuals aged 18 and above.
+                {isSimplified ? "面向18岁及以上的参赛者。" : "For individuals aged 18 and above."}
               </p>
             </div>
           </div>
@@ -196,24 +258,41 @@ function AwardGroupSection() {
 }
 
 // ── Support ───────────────────────────────────────────────────────
-function SupportSection() {
+function SupportSection({ isSimplified }: { isSimplified: boolean }) {
+  const supportItems = isSimplified
+    ? ["艺术家奖项与奖金", "公益项目推广与传播", "基金会日常运营"]
+    : [
+        "Artist Awards and Prizes",
+        "Foundation's Promotional and Advertising Expenses",
+        "Daily Operations and Management Costs",
+      ];
+
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
         <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
-          How the Foundation Supports Artists
+          {isSimplified ? "每一份支持，都是一份不可辜负的信任。" : "How the Foundation Supports Artists"}
         </h5>
         <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[44px] text-black tracking-[-0.96px] leading-[1.25] mt-1 mb-10 lg:mb-[56px]">
-          Funding and Transparency
+          {isSimplified ? "公开&透明" : "Funding and Transparency"}
         </h2>
 
-        <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[16px] text-[rgba(0,0,0,0.55)] mb-8">
-          The main use of the funds includes:
+        <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[16px] text-[rgba(0,0,0,0.55)] mb-8 leading-[1.65]">
+          {isSimplified ? (
+            <>
+              你的支持，<br />
+              将帮助更多优秀作品被看见，<br />
+              也让文化交流持续发生。<br /><br />
+              资金主要用于：
+            </>
+          ) : (
+            "The main use of the funds includes:"
+          )}
         </p>
         <div className="flex flex-col gap-3 max-w-[760px]">
           {[
             {
-              label: "Artist Awards and Prizes",
+              label: supportItems[0],
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                   <path d="M8 4h8v3.5a4 4 0 0 1-8 0V4Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -222,7 +301,7 @@ function SupportSection() {
               ),
             },
             {
-              label: "Foundation's Promotional and Advertising Expenses",
+              label: supportItems[1],
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                   <path d="M4 14h3l8 4V6L7 10H4v4Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -231,7 +310,7 @@ function SupportSection() {
               ),
             },
             {
-              label: "Daily Operations and Management Costs",
+              label: supportItems[2],
               icon: (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                   <rect x="6" y="4" width="12" height="17" rx="2" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -257,7 +336,7 @@ function SupportSection() {
 }
 
 // ── CTA — same background as About's NextChapterSection ──────────
-function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
+function CTASection({ onNavigate, isSimplified }: { onNavigate: (page: Page) => void; isSimplified: boolean }) {
   return (
     <section className="bg-[#f8f7f5] w-full py-14 lg:py-[72px] border-t border-[rgba(0,0,0,0.07)]">
       <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -314,22 +393,32 @@ function CTASection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
           <div className="relative z-10 flex flex-col gap-4 max-w-[640px] items-center">
             <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] text-[#3DB0D3] tracking-[-0.36px]">
-              Get Involved
+              {isSimplified ? "与我们一起" : "Get Involved"}
             </h5>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[26px] sm:text-[34px] lg:text-[44px] text-black tracking-[-0.88px] leading-[1.2]">
-              Help the Next Generation Carry Tradition Forward
+              {isSimplified ? "让文化，因你我而生生不息。" : "Help the Next Generation Carry Tradition Forward"}
             </h2>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.6)] leading-[1.65] max-w-[500px]">
-              Partner with ICEC to create opportunities for young artists and bring Chinese cultural heritage to wider audiences.
+              {isSimplified ? (
+                <>
+                  每一次支持，都有意义。<br />
+                  无论是捐赠、合作，<br />
+                  还是分享与参与，<br />
+                  都将帮助更多青年艺术家继续创作，<br />
+                  也让文化拥有更多相遇的机会。
+                </>
+              ) : (
+                "Partner with ICEC to create opportunities for young artists and bring Chinese cultural heritage to wider audiences."
+              )}
             </p>
           </div>
 
           <div className="relative z-10 flex flex-wrap justify-center gap-3">
             <button onClick={() => onNavigate("donate")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-blue-gradient-button rounded-[4px] cursor-pointer transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Donate for Us</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "支持捐赠" : "Donate for Us"}</span>
             </button>
             <button onClick={() => onNavigate("contact")} className="inline-flex items-center h-[46px] lg:h-[52px] px-7 icec-orange-gradient-button rounded-[4px] cursor-pointer transition-colors">
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">Contact Our Team</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[15px] lg:text-[18px] whitespace-nowrap">{isSimplified ? "联系我们" : "Contact Our Team"}</span>
             </button>
           </div>
         </div>
@@ -412,17 +501,20 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
 // ── Page ──────────────────────────────────────────────────────────
 export default function ArtFoundationPage({ onNavigate }: Props) {
+  const language = useSiteLanguage();
+  const isSimplified = language === "简体中文";
+
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
       <ICECHeader onNavigate={onNavigate} activePage="artfoundation" />
       <div className="flex flex-col w-full overflow-x-hidden">
-        <HeroSection />
-        <MissionSection />
-        <AwardCategoriesSection />
-        <AwardGroupSection />
-        <SupportSection />
-        <CTASection onNavigate={onNavigate} />
-        <FooterSection onNavigate={onNavigate} />
+        <HeroSection isSimplified={isSimplified} />
+        <MissionSection isSimplified={isSimplified} />
+        <AwardCategoriesSection isSimplified={isSimplified} />
+        <AwardGroupSection isSimplified={isSimplified} />
+        <SupportSection isSimplified={isSimplified} />
+        <CTASection onNavigate={onNavigate} isSimplified={isSimplified} />
+        <ICECFooter onNavigate={onNavigate} />
       </div>
     </div>
   );
