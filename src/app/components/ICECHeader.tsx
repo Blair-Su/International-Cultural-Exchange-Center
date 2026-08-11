@@ -45,7 +45,6 @@ export function ICECTopBar() { return null; }
 
 export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
   const [open, setOpen] = useState(false);
-  const [topBarVisible, setTopBarVisible] = useState(true);
   const [lang, setLang] = useState<SiteLanguage>(getStoredLanguage);
   const [langOpen, setLangOpen] = useState(false);
   const [programsOpen, setProgramsOpen] = useState(false);
@@ -67,12 +66,6 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
     setStoredLanguage(language);
     setLangOpen(false);
   };
-
-  useEffect(() => {
-    const onScroll = () => setTopBarVisible(window.scrollY < 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const openLangDropdown = useCallback((btnRef: React.RefObject<HTMLButtonElement | null>) => {
     const btn = btnRef.current;
@@ -126,12 +119,9 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
   ) : null;
 
   return (
-    <div className="sticky top-0 w-full" style={{ zIndex: 100 }}>
+    <header className="sticky top-0 w-full" style={{ zIndex: 100 }}>
       {/* ── top bar ───────────────────────────────────────────────── */}
-      <div
-        className="bg-gradient-to-r from-[#e8a876] to-[#6cc8e8] w-full overflow-hidden transition-all duration-300 ease-in-out"
-        style={{ height: topBarVisible ? 32 : 0 }}
-      >
+      <div className="bg-gradient-to-r from-[#e8a876] to-[#6cc8e8] w-full h-[32px] overflow-visible">
         <div className="flex items-center justify-center h-[32px] px-4 sm:px-6 lg:px-12">
           <div className="flex flex-1 items-center justify-between max-w-full">
             <div className="hidden sm:block w-[81px]" />
@@ -313,6 +303,6 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
 
       {/* Fixed-position dropdown — outside all overflow:hidden/stacking-context ancestors */}
       {langDropdown}
-    </div>
+    </header>
   );
 }
