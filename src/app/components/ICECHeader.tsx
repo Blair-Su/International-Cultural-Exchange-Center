@@ -1,3 +1,4 @@
+import { chineseCopy } from "@/app/traditionalChinese";
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { Page } from "../types";
 import { LANGUAGES, type SiteLanguage, getStoredLanguage, setStoredLanguage } from "../siteLanguage";
@@ -56,10 +57,10 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
   const [dropdownPos, setDropdownPos] = useState<{ top: number; right: number } | null>(null);
 
   const close = () => { setOpen(false); setMobilePrograms(false); };
-  const isSimplified = lang === "简体中文";
+  const isSimplified = lang !== "English";
   const navLinks = isSimplified ? SIMPLIFIED_NAV_LINKS : NAV_LINKS;
-  const topBarText = isSimplified ? "花朝节 2027 · 四月" : "Flower Festival 2027 · Apr";
-  const donateLabel = isSimplified ? "支持我们" : "Donate";
+  const topBarText = isSimplified ? chineseCopy("花朝节 2027 · 四月") : "Flower Festival 2027 · Apr";
+  const donateLabel = isSimplified ? chineseCopy("支持我们") : "Donate";
 
   const selectLanguage = (language: SiteLanguage) => {
     setLang(language);
@@ -190,7 +191,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                     <button
                       className="flex items-center gap-[4px] font-['Inter',sans-serif] font-medium text-[15px] xl:text-[16px] leading-[1.2] whitespace-nowrap cursor-pointer transition-colors text-[rgba(72,72,72,0.76)] hover:text-black"
                     >
-                      {label}
+                      {chineseCopy(label)}
                       <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className={`transition-transform duration-150 ${programsOpen ? "rotate-180" : ""}`}>
                         <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -202,7 +203,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                           const subPage = getProgramPage(sub);
                           return (
                             <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); setProgramsOpen(false); } }} className="w-full text-left px-[16px] py-[10px] font-['Inter',sans-serif] font-medium text-[14px] text-[#333] hover:bg-gray-50 hover:text-black transition-colors whitespace-nowrap cursor-pointer">
-                              {sub}
+                              {chineseCopy(sub)}
                             </button>
                           );
                         })}
@@ -219,7 +220,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                       activePage === page ? "text-black" : "text-[rgba(72,72,72,0.76)] hover:text-black",
                     ].join(" ")}
                   >
-                    {label}
+                    {chineseCopy(label)}
                   </button>
                 )
               )}
@@ -259,7 +260,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                       onClick={() => setMobilePrograms(!mobilePrograms)}
                       className="w-full flex items-center justify-between text-left font-['Inter',sans-serif] font-medium text-[17px] py-[14px] text-[rgba(50,50,50,0.8)] hover:text-black transition-colors cursor-pointer"
                     >
-                      {label}
+                      {chineseCopy(label)}
                       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className={`transition-transform duration-150 ${mobilePrograms ? "rotate-180" : ""}`}>
                         <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -270,7 +271,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                           const subPage = getProgramPage(sub);
                           return (
                             <button key={sub} onClick={() => { if (subPage) { onNavigate(subPage); close(); } }} className="text-left font-['Inter',sans-serif] font-medium text-[15px] py-[10px] text-[rgba(50,50,50,0.7)] hover:text-black transition-colors cursor-pointer">
-                              {sub}
+                              {chineseCopy(sub)}
                             </button>
                           );
                         })}
@@ -286,7 +287,7 @@ export function ICECHeader({ onNavigate, activePage }: ICECHeaderProps) {
                       activePage === page ? "text-[#E48D62] font-semibold" : "text-[rgba(50,50,50,0.8)] hover:text-black",
                     ].join(" ")}
                   >
-                    {label}
+                    {chineseCopy(label)}
                   </button>
                 )
               )}

@@ -1,3 +1,4 @@
+import { chineseCopy } from "@/app/traditionalChinese";
 import { useEffect, useState } from "react";
 import type { Page } from "../types";
 import { LANGUAGE_CHANGE_EVENT, type SiteLanguage, getStoredLanguage } from "../siteLanguage";
@@ -29,16 +30,16 @@ function useSiteLanguage() {
 }
 
 export function ICECFooter({ onNavigate }: { onNavigate: (page: Page) => void }) {
-  const isSimplified = useSiteLanguage() === "简体中文";
+  const isSimplified = useSiteLanguage() !== "English";
   const quickLinks = isSimplified
     ? [
-        { label: "关于我们", page: "about" as const },
-        { label: "社区活动", page: "events" as const },
-        { label: "文化课程", page: "classes" as const },
-        { label: "艺术基金", page: "artfoundation" as const },
-        { label: "志愿服务", page: "volunteer" as const },
+        { label: chineseCopy("关于我们"), page: "about" as const },
+        { label: chineseCopy("社区活动"), page: "events" as const },
+        { label: chineseCopy("文化课程"), page: "classes" as const },
+        { label: chineseCopy("艺术基金"), page: "artfoundation" as const },
+        { label: chineseCopy("志愿服务"), page: "volunteer" as const },
         { label: "捐款支持", page: "donate" as const },
-        { label: "联系我们", page: "contact" as const },
+        { label: chineseCopy("联系我们"), page: "contact" as const },
       ]
     : [
         { label: "About", page: "about" as const },
@@ -63,7 +64,7 @@ export function ICECFooter({ onNavigate }: { onNavigate: (page: Page) => void })
             </div>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.5]">
               {isSimplified ? (
-                "让文化，因你我而生生不息。"
+                chineseCopy("让文化，因你我而生生不息。")
               ) : (
                 <>
                   Preserving cultural heritage,<br />strengthening communities, and<br />inspiring future generations.
@@ -73,7 +74,7 @@ export function ICECFooter({ onNavigate }: { onNavigate: (page: Page) => void })
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "链接" : "Quick Links"}</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("链接") : "Quick Links"}</p>
             {quickLinks.map((link) => (
               <p
                 key={link.label}
@@ -86,20 +87,20 @@ export function ICECFooter({ onNavigate }: { onNavigate: (page: Page) => void })
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "联系我们" : "Contact"}</p>
-            <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "电子邮箱：" : ""}event@icecnyc.org</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "电话：" : ""}+1 (347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "微信：" : "WeChat: "}NY国潮君</a>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("联系我们") : "Contact"}</p>
+            <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? chineseCopy("电子邮箱：") : ""}event@icecnyc.org</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? chineseCopy("电话：") : ""}+1 (347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "微信：" : "WeChat: "}{chineseCopy("NY国潮君")}</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
               </div>
-              <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.68)] leading-[1.4]">{isSimplified ? "微信二维码" : "Follow us on WeChat!"}</p>
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.68)] leading-[1.4]">{isSimplified ? chineseCopy("微信二维码") : "Follow us on WeChat!"}</p>
             </div>
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "社交媒体" : "Social"}</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("社交媒体") : "Social"}</p>
             {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noopener noreferrer"
                 className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#3DB0D3] transition-colors no-underline">

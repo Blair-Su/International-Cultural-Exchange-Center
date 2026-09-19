@@ -1,3 +1,4 @@
+import { chineseCopy } from "@/app/traditionalChinese";
 import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
@@ -73,7 +74,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
             <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">event@icecnyc.org</a>
             <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{chineseCopy("WeChat: NY国潮君")}</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -99,7 +100,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 export default function DonatePage({ onNavigate }: Props) {
   const [copied, setCopied] = useState(false);
   const language = useSiteLanguage();
-  const isSimplified = language === "简体中文";
+  const isSimplified = language !== "English";
 
   const copyPaymentId = async () => {
     await navigator.clipboard?.writeText(PAYMENT_ID);
@@ -120,15 +121,15 @@ export default function DonatePage({ onNavigate }: Props) {
                   {isSimplified ? "支持 ICEC" : "Support ICEC"}
                 </p>
                 <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">
-                  {isSimplified ? "让文化，因你我而生生不息。" : "Make a Donation"}
+                  {isSimplified ? chineseCopy("让文化，因你我而生生不息。") : "Make a Donation"}
                 </h1>
                 <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.65)] leading-[1.65] max-w-[560px]">
                   {isSimplified ? (
                     <>
                       你的每一份支持，<br />
-                      都帮助 ICEC 持续开展文化活动、支持青年艺术家，<br />
-                      并让更多人与文化相遇。<br />
-                      让文化，因你我而生生不息。
+                      {chineseCopy("都帮助 ICEC 持续开展文化活动、支持青年艺术家，")}<br />
+                      {chineseCopy("并让更多人与文化相遇。")}<br />
+                      {chineseCopy("让文化，因你我而生生不息。")}
                     </>
                   ) : (
                     "Your contribution helps ICEC support cultural programs, young artists, and community events."

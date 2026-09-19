@@ -1,3 +1,4 @@
+import { chineseCopy } from "@/app/traditionalChinese";
 import { useEffect, useState } from "react";
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
@@ -81,7 +82,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
             <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">Contact</p>
             <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">event@icecnyc.org</a>
             <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">+1(347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">WeChat: NY国潮君</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{chineseCopy("WeChat: NY国潮君")}</a>
             <div className="flex items-center gap-4 mt-1">
               <a href={imgWeChatQr} target="_blank" rel="noopener noreferrer" className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0 block">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
@@ -107,7 +108,7 @@ function FooterSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
 
 export default function ContactPage({ onNavigate }: Props) {
   const language = useSiteLanguage();
-  const isSimplified = language === "简体中文";
+  const isSimplified = language !== "English";
 
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
@@ -117,14 +118,14 @@ export default function ContactPage({ onNavigate }: Props) {
           <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[88px] items-start">
               <div className="pt-2">
-                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">{isSimplified ? "联系 ICEC" : "Contact ICEC"}</p>
-                <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">{isSimplified ? "从一句问候开始。" : "Let's Connect"}</h1>
+                <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">{isSimplified ? chineseCopy("联系 ICEC") : "Contact ICEC"}</p>
+                <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[36px] sm:text-[48px] lg:text-[60px] text-black tracking-[-1.2px] leading-[1.15] mb-5">{isSimplified ? chineseCopy("从一句问候开始。") : "Let's Connect"}</h1>
                 <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.65)] leading-[1.65] max-w-[560px]">
                   {isSimplified ? (
                     <>
-                      欢迎咨询活动、课程、合作及社区项目。<br />
-                      期待与你交流，<br />
-                      更期待与你相遇。
+                      {chineseCopy("欢迎咨询活动、课程、合作及社区项目。")}<br />
+                      {chineseCopy("期待与你交流，")}<br />
+                      {chineseCopy("更期待与你相遇。")}
                     </>
                   ) : (
                     "Reach us directly for questions, partnerships, events, and community programs."
@@ -134,14 +135,14 @@ export default function ContactPage({ onNavigate }: Props) {
 
               <div className="flex flex-col gap-3">
                 <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-4">
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">{isSimplified ? "联络方式" : "Contact Information"}</h3>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">{isSimplified ? chineseCopy("联络方式") : "Contact Information"}</h3>
                   <div className="flex flex-col gap-4">
                     <div className="flex items-start gap-3">
                       <div className="w-[36px] h-[36px] rounded-full bg-[#fef2e5] flex items-center justify-center shrink-0 mt-[1px]">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#E48D62" strokeWidth="1.8"/><path d="M22 6l-10 7L2 6" stroke="#E48D62" strokeWidth="1.8" strokeLinecap="round"/></svg>
                       </div>
                       <div>
-                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? "电子邮箱" : "Email"}</p>
+                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? chineseCopy("电子邮箱") : "Email"}</p>
                         <a href="mailto:event@icecnyc.org" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">event@icecnyc.org</a>
                       </div>
                     </div>
@@ -150,7 +151,7 @@ export default function ContactPage({ onNavigate }: Props) {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.78a2 2 0 0 1-.45 2.11L8.05 9.88a16 16 0 0 0 6.07 6.07l1.27-1.27a2 2 0 0 1 2.11-.45c.89.31 1.82.53 2.78.66A2 2 0 0 1 22 16.92Z" stroke="#3DB0D3" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       </div>
                       <div>
-                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? "电话" : "Phone"}</p>
+                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? chineseCopy("电话") : "Phone"}</p>
                         <a href="tel:+13475643593" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">+1(347) 564-3593</a>
                       </div>
                     </div>
@@ -159,7 +160,7 @@ export default function ContactPage({ onNavigate }: Props) {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" stroke="#E48D62" strokeWidth="1.8"/><circle cx="12" cy="10" r="3" stroke="#E48D62" strokeWidth="1.8"/></svg>
                       </div>
                       <div>
-                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? "地点" : "Location"}</p>
+                        <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px] mb-2">{isSimplified ? chineseCopy("地点") : "Location"}</p>
                         <p className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black">New York, NY</p>
                       </div>
                     </div>
@@ -169,12 +170,12 @@ export default function ContactPage({ onNavigate }: Props) {
                       </div>
                       <div className="flex flex-col gap-3">
                         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[13px] text-[rgba(0,0,0,0.4)] uppercase tracking-[0.8px]">{isSimplified ? "微信" : "WeChat"}</p>
-                        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">NY国潮君</a>
+                        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Medium',sans-serif] font-medium text-[14px] lg:text-[16px] text-black hover:opacity-75 transition-opacity no-underline">{chineseCopy("NY国潮君")}</a>
                         <div className="flex items-center gap-3 mt-1">
                           <a href={imgWeChatQr} target="_blank" rel="noopener noreferrer" className="shrink-0 block">
                             <img src={imgWeChatQr} alt="WeChat QR code" className="w-[72px] h-[72px] rounded-[6px] object-cover" />
                           </a>
-                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.5)] leading-[1.6] max-w-[180px]">{isSimplified ? "微信二维码" : "Scan to follow us on WeChat"}</p>
+                          <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] lg:text-[16px] text-[rgba(0,0,0,0.5)] leading-[1.6] max-w-[180px]">{isSimplified ? chineseCopy("微信二维码") : "Scan to follow us on WeChat"}</p>
                         </div>
                       </div>
                     </div>
@@ -182,7 +183,7 @@ export default function ContactPage({ onNavigate }: Props) {
                 </div>
 
                 <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-[rgba(0,0,0,0.08)] flex flex-col gap-4">
-                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">{isSimplified ? "社交媒体" : "Social Media"}</h3>
+                  <h3 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[18px] lg:text-[20px] text-black tracking-[-0.4px] leading-[1.3]">{isSimplified ? chineseCopy("社交媒体") : "Social Media"}</h3>
                   <div className="flex flex-col gap-3">
                     {SOCIAL_ITEMS.map(({ name, url, icon, bg, hover }) => (
                       <a key={name} href={url} target="_blank" rel="noopener noreferrer"

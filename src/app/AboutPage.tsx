@@ -1,3 +1,4 @@
+import { chineseCopy } from "@/app/traditionalChinese";
 import image_About_us_3_1 from '@/imports/About_us-3-1.webp'
 import type { Page } from "./types";
 import { ICECHeader } from "./components/ICECHeader";
@@ -40,7 +41,7 @@ function AboutUsSection({ isSimplified }: { isSimplified: boolean }) {
       <div className="absolute inset-0 bg-black/55" />
       <div className="relative flex flex-col justify-end h-full max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 lg:pb-16">
         <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] sm:text-[20px] lg:text-[24px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45] mb-2 lg:mb-3">
-          {isSimplified ? "关于ICEC" : "About Us"}
+          {isSimplified ? chineseCopy("关于ICEC") : "About Us"}
         </p>
         <h1 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[44px] lg:text-[64px] text-white tracking-[-1.28px] leading-[1.2] max-w-[700px]">
           International Cultural Exchange Center
@@ -61,20 +62,20 @@ function IntroductionSection({ isSimplified }: { isSimplified: boolean }) {
           <div className="flex flex-col gap-8 w-full lg:w-[480px] lg:shrink-0 lg:pt-16">
             <div>
               <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#E48D62] tracking-[-0.48px] leading-[1.45]">
-                {isSimplified ? "关于我们" : "Introduction"}
+                {isSimplified ? chineseCopy("关于我们") : "Introduction"}
               </h5>
               <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.48px] leading-[1.25] mt-1">
-                {isSimplified ? "我们是谁？" : "Who We Are"}
+                {isSimplified ? chineseCopy("我们是谁？") : "Who We Are"}
               </h2>
             </div>
             <div className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.8)] leading-[1.4] flex flex-col gap-4">
               {isSimplified ? (
                 <>
-                  <p>一个举办传统节庆活动、开设艺术课程，致力于文化交流的社区服务型非营利机构吗？</p>
-                  <p>是。但远不止于此。</p>
-                  <p>这里不仅分享华夏文明，<br />也欢迎不同文化彼此交流、彼此学习、彼此启发。</p>
-                  <p>每一次相遇，都可能开启新的理解。<br />每一次交流，都让文化连接彼此。</p>
-                  <p>因为你的参与，ICEC 的定义才更完整。</p>
+                  <p>{chineseCopy("一个举办传统节庆活动、开设艺术课程，致力于文化交流的社区服务型非营利机构吗？")}</p>
+                  <p>{chineseCopy("是。但远不止于此。")}</p>
+                  <p>{chineseCopy("这里不仅分享华夏文明，")}<br />{chineseCopy("也欢迎不同文化彼此交流、彼此学习、彼此启发。")}</p>
+                  <p>{chineseCopy("每一次相遇，都可能开启新的理解。")}<br />{chineseCopy("每一次交流，都让文化连接彼此。")}</p>
+                  <p>{chineseCopy("因为你的参与，ICEC 的定义才更完整。")}</p>
                 </>
               ) : (
                 <>
@@ -122,10 +123,10 @@ function OurMissionSection({ isSimplified }: { isSimplified: boolean }) {
         {/* Centered heading */}
         <div className="text-center mb-10 lg:mb-[72px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
-            {isSimplified ? "我们的使命" : "Our Mission"}
+            {isSimplified ? chineseCopy("我们的使命") : "Our Mission"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45] mt-1">
-            {isSimplified ? "让文化连接彼此" : "A World Where Cultures Connect"}
+            {isSimplified ? chineseCopy("让文化连接彼此") : "A World Where Cultures Connect"}
           </h2>
         </div>
 
@@ -136,9 +137,9 @@ function OurMissionSection({ isSimplified }: { isSimplified: boolean }) {
             <div className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.55] flex flex-col gap-4">
               {isSimplified ? (
                 <>
-                  <p>以华夏文明为根，以文化交流为桥。</p>
-                  <p>通过文化活动、教育课程与艺术实践，<br />让更多人走近文化、亲身体验，<br />并在学习与交流中理解彼此。</p>
-                  <p>不急于求同，也不止于保留差异。<br />让不同文化彼此启发，让共同的智慧自然显现。</p>
+                  <p>{chineseCopy("以华夏文明为根，以文化交流为桥。")}</p>
+                  <p>{chineseCopy("通过文化活动、教育课程与艺术实践，")}<br />{chineseCopy("让更多人走近文化、亲身体验，")}<br />{chineseCopy("并在学习与交流中理解彼此。")}</p>
+                  <p>{chineseCopy("不急于求同，也不止于保留差异。")}<br />{chineseCopy("让不同文化彼此启发，让共同的智慧自然显现。")}</p>
                 </>
               ) : (
                 <>
@@ -156,7 +157,7 @@ function OurMissionSection({ isSimplified }: { isSimplified: boolean }) {
             <div className="flex items-center gap-4">
               <div className="w-[32px] h-[2px] bg-[#E48D62] shrink-0" />
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[17px] text-[rgba(0,0,0,0.45)] italic leading-[1.5]">
-                {isSimplified ? "“交流，让陌生人成为朋友。”" : "\"Exchange transforms strangers into neighbors.\""}
+                {isSimplified ? chineseCopy("“交流，让陌生人成为朋友。”") : "\"Exchange transforms strangers into neighbors.\""}
               </p>
             </div>
 
@@ -195,17 +196,17 @@ const BARS = [
 function OurImpactSection({ isSimplified }: { isSimplified: boolean }) {
   const stats = isSimplified
     ? [
-        { number: "15", suffix: "+", label: "年影响力" },
-        { number: "80", suffix: "+", label: "举办活动" },
-        { number: "50", suffix: "+", label: "合作机构" },
-        { number: "10,000", suffix: "+", label: "参与者" },
+        { number: "15", suffix: "+", label: chineseCopy("年影响力") },
+        { number: "80", suffix: "+", label: chineseCopy("举办活动") },
+        { number: "50", suffix: "+", label: chineseCopy("合作机构") },
+        { number: "10,000", suffix: "+", label: chineseCopy("参与者") },
       ]
     : STATS;
   const bars = isSimplified
     ? [
-        { label: "来自不同文化背景的参与者", pct: 90, color: "#E48D62" },
-        { label: "愿意向他人推荐 ICEC 活动", pct: 95, color: "#3DB0D3" },
-        { label: "持续参与的伙伴与参与者", pct: 70, color: "#c08848" },
+        { label: chineseCopy("来自不同文化背景的参与者"), pct: 90, color: "#E48D62" },
+        { label: chineseCopy("愿意向他人推荐 ICEC 活动"), pct: 95, color: "#3DB0D3" },
+        { label: chineseCopy("持续参与的伙伴与参与者"), pct: 70, color: "#c08848" },
       ]
     : BARS;
 
@@ -215,10 +216,10 @@ function OurImpactSection({ isSimplified }: { isSimplified: boolean }) {
 
         <div className="text-center mb-10 lg:mb-[64px]">
           <h5 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#3DB0D3] tracking-[-0.48px] leading-[1.45]">
-            {isSimplified ? "连接，正在发生" : "Our Impact"}
+            {isSimplified ? chineseCopy("连接，正在发生") : "Our Impact"}
           </h5>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.45] mt-1">
-            {isSimplified ? "每一个数字，都来自一次真实的相遇。" : "Numbers That Tell Our Story"}
+            {isSimplified ? chineseCopy("每一个数字，都来自一次真实的相遇。") : "Numbers That Tell Our Story"}
           </h2>
         </div>
 
@@ -349,10 +350,10 @@ function NextChapterSection({ onNavigate, isSimplified }: { onNavigate: (page: P
           </svg>
           <div className="relative z-10 flex flex-col gap-4 max-w-[640px] items-center">
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[28px] sm:text-[36px] lg:text-[48px] text-black tracking-[-0.96px] leading-[1.2]">
-              {isSimplified ? "与我们一起" : <>Be Part of Our <br className="sm:hidden" />Next Chapter</>}
+              {isSimplified ? chineseCopy("与我们一起") : <>Be Part of Our <br className="sm:hidden" />Next Chapter</>}
             </h2>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[15px] lg:text-[18px] text-[rgba(0,0,0,0.68)] leading-[1.55]">
-              {isSimplified ? "无论你来自哪里，有怎样的文化背景，这里都有属于你的位置。让我们在此相遇。相互学习。彼此理解。" : "Every connection creates new possibilities. Join ICEC through our events, programs, and partnerships, and help shape the impact ahead."}
+              {isSimplified ? chineseCopy("无论你来自哪里，有怎样的文化背景，这里都有属于你的位置。让我们在此相遇。相互学习。彼此理解。") : "Every connection creates new possibilities. Join ICEC through our events, programs, and partnerships, and help shape the impact ahead."}
             </p>
           </div>
 
@@ -365,7 +366,7 @@ function NextChapterSection({ onNavigate, isSimplified }: { onNavigate: (page: P
                 <path d="M8 2V6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M3 10H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? "探索后续活动" : "Explore Upcoming Events"}</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? chineseCopy("探索后续活动") : "Explore Upcoming Events"}</span>
             </button>
 
             {/* Partner With Us — teal filled */}
@@ -373,7 +374,7 @@ function NextChapterSection({ onNavigate, isSimplified }: { onNavigate: (page: P
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50903 2.99871 7.05 2.99871C5.59097 2.99871 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.9379 22.4518 9.22249 22.4518 8.5C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72719 21.351 5.12076 20.84 4.61Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? "联系加入我们" : "Partner With Us"}</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? chineseCopy("联系加入我们") : "Partner With Us"}</span>
             </button>
 
             {/* Donate — orange filled */}
@@ -385,7 +386,7 @@ function NextChapterSection({ onNavigate, isSimplified }: { onNavigate: (page: P
                 <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? "支持捐赠" : "Donate"}</span>
+              <span className="font-['Inter:Medium',sans-serif] font-medium text-white text-[18px] tracking-[-0.09px] leading-[1.45] whitespace-nowrap">{isSimplified ? chineseCopy("支持捐赠") : "Donate"}</span>
             </button>
           </div>
         </div>
@@ -398,13 +399,13 @@ function NextChapterSection({ onNavigate, isSimplified }: { onNavigate: (page: P
 function Footer({ onNavigate, isSimplified }: { onNavigate: (p: Page) => void; isSimplified: boolean }) {
   const quickLinks = isSimplified
     ? [
-        { label: "关于我们", page: "about" as const },
-        { label: "社区活动", page: "events" as const },
-        { label: "文化课程", page: "classes" as const },
-        { label: "艺术基金", page: "artfoundation" as const },
-        { label: "志愿服务", page: "volunteer" as const },
+        { label: chineseCopy("关于我们"), page: "about" as const },
+        { label: chineseCopy("社区活动"), page: "events" as const },
+        { label: chineseCopy("文化课程"), page: "classes" as const },
+        { label: chineseCopy("艺术基金"), page: "artfoundation" as const },
+        { label: chineseCopy("志愿服务"), page: "volunteer" as const },
         { label: "捐款支持", page: "donate" as const },
-        { label: "联系我们", page: "contact" as const },
+        { label: chineseCopy("联系我们"), page: "contact" as const },
       ]
     : [
         { label: "About", page: "about" as const },
@@ -431,7 +432,7 @@ function Footer({ onNavigate, isSimplified }: { onNavigate: (p: Page) => void; i
             </div>
             <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.5]">
               {isSimplified ? (
-                "让文化，因你我而生生不息。"
+                chineseCopy("让文化，因你我而生生不息。")
               ) : (
                 <>
                   Preserving cultural heritage,<br />strengthening communities, and<br />inspiring future generations.
@@ -442,7 +443,7 @@ function Footer({ onNavigate, isSimplified }: { onNavigate: (p: Page) => void; i
 
           {/* Quick Links */}
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "链接" : "Quick Links"}</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("链接") : "Quick Links"}</p>
             {quickLinks.map((link) => (
               <p
                 key={link.label}
@@ -456,21 +457,21 @@ function Footer({ onNavigate, isSimplified }: { onNavigate: (p: Page) => void; i
 
           {/* Contact */}
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "联系我们" : "Contact"}</p>
-            <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "电子邮箱：" : ""}event@icecnyc.org</a>
-            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "电话：" : ""}+1 (347) 564-3593</a>
-            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "微信：" : "WeChat: "}NY国潮君</a>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("联系我们") : "Contact"}</p>
+            <a href="mailto:event@icecnyc.org" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? chineseCopy("电子邮箱：") : ""}event@icecnyc.org</a>
+            <a href="tel:+13475643593" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? chineseCopy("电话：") : ""}+1 (347) 564-3593</a>
+            <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=gh_898ffa8e98be==&scene=110" target="_blank" rel="noopener noreferrer" className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] hover:text-[#E48D62] transition-colors no-underline">{isSimplified ? "微信：" : "WeChat: "}{chineseCopy("NY国潮君")}</a>
             <div className="flex items-center gap-4 mt-1">
               <div className="relative rounded-[4px] size-[72px] overflow-hidden shrink-0">
                 <img src={imgWeChatQr} alt="WeChat QR" className="w-full h-full object-cover" />
               </div>
-              <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.68)] leading-[1.4]">{isSimplified ? "微信二维码" : "Follow us on WeChat!"}</p>
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[13px] text-[rgba(0,0,0,0.68)] leading-[1.4]">{isSimplified ? chineseCopy("微信二维码") : "Follow us on WeChat!"}</p>
             </div>
           </div>
 
           {/* Social */}
           <div className="flex flex-col gap-3">
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? "社交媒体" : "Social"}</p>
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[15px] text-[rgba(0,0,0,0.92)] mb-1">{isSimplified ? chineseCopy("社交媒体") : "Social"}</p>
             {["TikTok", "Instagram", "Facebook", "Youtube", "RedNote"].map((l) => (
               <p key={l} className="font-['Inter:Regular',sans-serif] font-normal text-[14px] text-[rgba(0,0,0,0.68)] leading-[1.7] cursor-pointer hover:text-[#3DB0D3] transition-colors">
                 {l}
@@ -492,7 +493,7 @@ function Footer({ onNavigate, isSimplified }: { onNavigate: (p: Page) => void; i
 // ── Page assembly ─────────────────────────────────────────────────
 export default function AboutPage({ onNavigate }: Props) {
   const language = useSiteLanguage();
-  const isSimplified = language === "简体中文";
+  const isSimplified = language !== "English";
 
   return (
     <div className="bg-[#f8f7f5] flex flex-col w-full min-h-screen">
